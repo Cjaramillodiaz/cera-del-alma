@@ -636,10 +636,16 @@
             'suculentas': 'Vela Jardín de Suculentas ($20.000)',
             'fantasmita': 'Vela Fantasmita Amigable ($15.000)'
         };
+        // Manejo del evento "Atrás" del celular
+window.addEventListener('popstate', function () {
+    closeImageModal(false);
+    closeNequiModal(false);
+});
 
         function renderProducts() {
             const grid = document.getElementById('products-grid') || document.getElementById('product-grid');
             if (!grid) return;
+            
 
             grid.innerHTML = products.map(p => {
                 const badgeHTML = p.badge ? `
@@ -1038,13 +1044,23 @@ function setCustomOption(type, value, price = null) {
                 summaryDetails.innerHTML = html;
             }
 
-            if (modal) modal.classList.remove('hidden');
+            if (modal) {
+                modal.classList.remove('hidden');
+                // Registrar la apertura en el historial para capturar el botón "Atrás" del celular
+                history.pushState({ modalOpen: 'ticket' }, '');
+            }
             if (window.lucide) lucide.createIcons();
         }
 
-        function closeNequiModal() {
+        // Cerrar modal Nequi / Ticket con soporte de historial
+        function closeNequiModal(fromButton = true) {
             const modal = document.getElementById('nequi-modal');
-            if (modal) modal.classList.add('hidden');
+            if (modal && !modal.classList.contains('hidden')) {
+                modal.classList.add('hidden');
+                if (fromButton && history.state && history.state.modalOpen === 'ticket') {
+                    history.back();
+                }
+            }
         }
 
         function sendOrderWhatsApp() {
@@ -1080,6 +1096,13 @@ function setCustomOption(type, value, price = null) {
             window.open(url, '_blank');
         }
 
+        // Listener para capturar la tecla o gesto de "Atrás" en dispositivos móviles
+        window.addEventListener('popstate', function () {
+            closeImageModal(false);
+            closeNequiModal(false);
+        });
+
+        // Abrir modal con la imagen grande registrando la vista en el historial
         function openImageModal(imgSrc, title) {
             const modal = document.getElementById('image-modal');
             const modalImg = document.getElementById('modal-image-src');
@@ -1090,19 +1113,30 @@ function setCustomOption(type, value, price = null) {
                 if (modalTitle) modalTitle.innerText = title;
                 modal.classList.remove('hidden');
                 if (window.lucide) lucide.createIcons();
+
+                // Registra la apertura para que el botón "Atrás" del celular solo cierre el modal
+                history.pushState({ modalOpen: 'image' }, '');
             }
         }
 
-        function closeImageModal() {
+        // Cerrar modal de imagen limpiando el historial si se presiona la "X"
+        function closeImageModal(fromButton = true) {
             const modal = document.getElementById('image-modal');
-            if (modal) modal.classList.add('hidden');
+            if (modal && !modal.classList.contains('hidden')) {
+                modal.classList.add('hidden');
+                if (fromButton && history.state && history.state.modalOpen === 'image') {
+                    history.back();
+                }
+            }
         }
 
+        // Consultar cotización al por mayor por WhatsApp
         function openWhatsAppConsult() {
             const msg = "Hola, me interesa solicitar una cotización de velas al por mayor para un evento/negocio en Bogotá.";
             window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
+        // Inicialización al cargar la página
         window.onload = function() {
             drawCandle();
             renderProducts();
