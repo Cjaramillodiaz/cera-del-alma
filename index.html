@@ -735,7 +735,7 @@
         // 1. Dibujar la foto base de la vela
         ctx.drawImage(img, 0, 0, img.width, img.height, centerShiftX, centerShiftY, drawW, drawH);
 
-        // 2. Aplicar tinte dinámico de color si no es blanco/marfil
+        // 2. APLICAR TINTE CON ALTA INTENSIDAD DE COLOR
         const selectedColorHex = (currentCustom.color || '#FDFBF7').toUpperCase();
 
         if (selectedColorHex !== '#FFFFFF' && selectedColorHex !== '#FDFBF7') {
@@ -744,15 +744,23 @@
             tintCanvas.height = canvas.height;
             const tintCtx = tintCanvas.getContext('2d');
 
+            // Llenar la capa auxiliar con el color elegido
             tintCtx.fillStyle = selectedColorHex;
             tintCtx.fillRect(centerShiftX, centerShiftY, drawW, drawH);
 
+            // Cortar con la silueta de la vela
             tintCtx.globalCompositeOperation = 'destination-in';
             tintCtx.drawImage(img, 0, 0, img.width, img.height, centerShiftX, centerShiftY, drawW, drawH);
 
             ctx.save();
+            // Fusión 'multiply' con opacidad al 100% para máxima saturación y contraste
             ctx.globalCompositeOperation = 'multiply';
-            ctx.globalAlpha = 0.85;
+            ctx.globalAlpha = 1.0; 
+            ctx.drawImage(tintCanvas, 0, 0);
+
+            // Segunda pasada liviana en modo 'color' para resaltar aún más el pigmento en tonos claros
+            ctx.globalCompositeOperation = 'color';
+            ctx.globalAlpha = 0.35;
             ctx.drawImage(tintCanvas, 0, 0);
             ctx.restore();
         }
