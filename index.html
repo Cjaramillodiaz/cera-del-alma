@@ -511,6 +511,58 @@
         <i data-lucide="message-circle" class="w-7 h-7"></i>
     </a>
 
+    <!-- SECCIÓN INTERACTIVA: PRÓXIMAMENTE COLECCIÓN NAVIDEÑA -->
+    <section id="navidad" class="py-16 relative overflow-hidden bg-gradient-to-br from-red-950 via-stone-900 to-emerald-950 text-white border-t border-amber-500/30">
+        <!-- Partículas / Copos de nieve decorativos -->
+        <div class="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
+            <div class="inline-flex items-center gap-2 bg-red-900/60 border border-red-500/40 px-4 py-1.5 rounded-full text-xs font-semibold text-red-200 backdrop-blur-md shadow-lg">
+                <span class="text-base">🎄</span> Edición Especial de Temporada
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-3">
+                <h2 class="font-serif text-3xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-amber-200 via-amber-100 to-amber-400 bg-clip-text text-transparent">
+                    Próximamente: Colección Navideña 2026 🎅✨
+                </h2>
+                <p class="text-stone-300 text-sm sm:text-base font-light leading-relaxed">
+                    Estamos horneando los aromas más cálidos de pino, canela y manzana silvestre. Diseños artesanales exclusivos en forma de Papá Noel, árboles festivos y pesebres para iluminar tus novenas en Bogotá.
+                </p>
+            </div>
+
+            <!-- Contador Regresivo Interactivo -->
+            <div class="flex justify-center items-center gap-3 sm:gap-6 pt-2">
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 p-3 sm:p-4 rounded-2xl w-20 sm:w-24 shadow-xl">
+                    <span id="xmas-days" class="font-serif text-2xl sm:text-4xl font-bold text-amber-300 block">00</span>
+                    <span class="text-[10px] sm:text-xs text-stone-300 font-medium uppercase tracking-wider">Días</span>
+                </div>
+                <span class="text-2xl font-serif text-amber-400/60">:</span>
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 p-3 sm:p-4 rounded-2xl w-20 sm:w-24 shadow-xl">
+                    <span id="xmas-hours" class="font-serif text-2xl sm:text-4xl font-bold text-amber-300 block">00</span>
+                    <span class="text-[10px] sm:text-xs text-stone-300 font-medium uppercase tracking-wider">Horas</span>
+                </div>
+                <span class="text-2xl font-serif text-amber-400/60">:</span>
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 p-3 sm:p-4 rounded-2xl w-20 sm:w-24 shadow-xl">
+                    <span id="xmas-minutes" class="font-serif text-2xl sm:text-4xl font-bold text-amber-300 block">00</span>
+                    <span class="text-[10px] sm:text-xs text-stone-300 font-medium uppercase tracking-wider">Minut.</span>
+                </div>
+                <span class="text-2xl font-serif text-amber-400/60">:</span>
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 p-3 sm:p-4 rounded-2xl w-20 sm:w-24 shadow-xl">
+                    <span id="xmas-seconds" class="font-serif text-2xl sm:text-4xl font-bold text-amber-300 block">00</span>
+                    <span class="text-[10px] sm:text-xs text-stone-300 font-medium uppercase tracking-wider">Seg.</span>
+                </div>
+            </div>
+
+            <!-- Botón interactivo de registro / preventa en WhatsApp -->
+            <div class="pt-4">
+                <button onclick="reserveXmasCollection()" class="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-stone-950 font-extrabold px-8 py-4 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center gap-3 text-sm tracking-wide">
+                    <i data-lucide="bell" class="w-5 h-5 text-stone-950"></i>
+                    Unirme a la Lista VIP / Apartar Catálogo Navideño
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer / Pie de Página -->
     <footer id="contacto" class="bg-brand-900 text-brand-100 py-12 border-t border-brand-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
@@ -1136,11 +1188,54 @@ function setCustomOption(type, value, price = null) {
             window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
+        
+        // Lógica del Contador Regresivo Navideño
+        function startXmasCountdown() {
+            const currentYear = new Date().getFullYear();
+            let xmasDate = new Date(`December 1, ${currentYear} 00:00:00`).getTime();
+
+            if (new Date().getTime() > xmasDate) {
+                xmasDate = new Date(`December 1, ${currentYear + 1} 00:00:00`).getTime();
+            }
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const distance = xmasDate - now;
+
+                if (distance < 0) return;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                const dEl = document.getElementById('xmas-days');
+                const hEl = document.getElementById('xmas-hours');
+                const mEl = document.getElementById('xmas-minutes');
+                const sEl = document.getElementById('xmas-seconds');
+
+                if (dEl) dEl.innerText = days < 10 ? '0' + days : days;
+                if (hEl) hEl.innerText = hours < 10 ? '0' + hours : hours;
+                if (mEl) mEl.innerText = minutes < 10 ? '0' + minutes : minutes;
+                if (sEl) sEl.innerText = seconds < 10 ? '0' + seconds : seconds;
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        // Acción al presionar el botón de reserva Navideña por WhatsApp
+        function reserveXmasCollection() {
+            const msg = "Hola Cera del Alma! 🎄✨ Me gustaría unirme a la Lista VIP para ser de los primeros en recibir el catálogo exclusivo de la Colección Navideña en Bogotá.";
+            window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
         // Inicialización al cargar la página
         window.onload = function() {
             drawCandle();
             renderProducts();
             updateCart();
+            startXmasCountdown();
             if (window.lucide) lucide.createIcons();
         };
     </script>
