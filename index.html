@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cera del Alma | Velas Artesanales en Bogotá</title>
+    <!-- Tailwind CSS desde CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de colores personalizados de la marca -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdfbf7',
+                            100: '#f7f1e5',
+                            200: '#ebd9c1',
+                            300: '#dec09b',
+                            400: '#d1a575',
+                            500: '#c28952',
+                            600: '#ab6f42',
+                            700: '#8c5436',
+                            800: '#734331',
+                            900: '#5e372b',
+                        },
+                        cream: '#fcfaf7',
+                        clay: '#d9a07a',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fuentes de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Iconos de Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .candle-shadow {
+            box-shadow: 0 20px 40px -15px rgba(140, 84, 54, 0.2);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f7f1e5;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dec09b;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-cream font-sans text-brand-900 antialiased selection:bg-brand-200 custom-scrollbar">
+
+    <!-- Banner de Envíos Exclusivos -->
+    <div class="bg-brand-800 text-brand-50 text-xs py-2 px-4 text-center font-medium flex items-center justify-center gap-2">
+        <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-200"></i>
+        <span>Envíos exclusivos en <strong>Bogotá, Colombia</strong>. ¡Precios especiales al por mayor (+12 uds)!</span>
+    </div>
+
+    <!-- Navegación -->
+    <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b border-brand-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 group-hover:bg-brand-200 transition-colors">
+                    <i data-lucide="flame" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-tight text-brand-900 block leading-none">Cera del Alma</span>
+                    <span class="text-[10px] tracking-widest text-brand-600 uppercase font-medium">Luz, aroma y armonía</span>
+                </div>
+            </a>
+
+            <!-- Enlaces con los IDs reales y enlace directo a WhatsApp -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-brand-800">
+                <a href="#catalogo" class="hover:text-brand-600 transition-colors">Catálogo</a>
+                <a href="#estudio-creativo" class="hover:text-brand-600 transition-colors">Personalizador</a>
+                <a href="#catalogo" class="hover:text-brand-600 transition-colors">Precios por Mayor</a>
+                <a href="https://wa.me/573214291422?text=Hola%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20las%20velas%20de%20Cera%20del%20Alma" target="_blank" class="hover:text-brand-600 transition-colors">Contacto</a>
+            </nav>
+
+            <button onclick="toggleCart()" class="relative p-2 text-brand-800 hover:text-brand-600 transition-colors">
+                <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                <span id="cart-count" class="absolute -top-1 -right-1 bg-brand-600 text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-sm">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION AUTÉNTICA Y CÁLIDA -->
+<section class="relative bg-gradient-to-br from-amber-50/80 via-amber-100/40 to-stone-100 py-16 lg:py-24 overflow-hidden">
+    <!-- Destellos de luz decorativos de fondo -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-amber-300/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Columna Izquierda: Mensaje Cercano y Real -->
+            <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                <!-- Badge Superior -->
+                <div class="inline-flex items-center gap-2 bg-amber-100/80 border border-amber-300/60 px-4 py-1.5 rounded-full text-xs font-semibold text-amber-900 shadow-sm">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-600"></span>
+                    </span>
+                    🕯️ Hechas a Mano en Bogotá
+                </div>
+
+                <!-- Título Principal -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-stone-900 leading-tight tracking-tight font-serif">
+                    Ilumina tus espacios con <span class="bg-gradient-to-r from-amber-700 via-amber-800 to-amber-900 bg-clip-text text-transparent">alma y aroma.</span>
+                </h1>
+
+                <!-- Descripción Real -->
+                <p class="text-stone-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                    Cada vela es vertida a mano en casa con dedicación y las mejores esencias. Diseña tu propia figura personalizada para regalar o explora nuestro catálogo.
+                </p>
+
+                <!-- Botones de Acción Funcionando con los IDs de las Secciones -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="#estudio-creativo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-800 to-amber-900 hover:from-amber-900 hover:to-stone-900 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 text-sm">
+                        <i data-lucide="sparkles" class="w-5 h-5 text-amber-300"></i>
+                        Personalizar mi Vela
+                    </a>
+                    
+                    <a href="#catalogo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-stone-800 font-semibold px-7 py-4 rounded-xl border border-amber-200/80 hover:border-amber-400 shadow-sm hover:shadow transition-all text-sm">
+                        Ver Catálogo Completo
+                    </a>
+                </div>
+
+                <!-- Indicadores Locales -->
+                <div class="pt-4 flex items-center justify-center lg:justify-start gap-6 text-xs text-stone-500 font-medium border-t border-amber-200/60 mt-6">
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-amber-600 font-bold">✨ Trabajo Artesanal</span>
+                    </div>
+                    <div class="w-1 h-1 bg-stone-300 rounded-full"></div>
+                    <div>📦 Envíos en Bogotá</div>
+                    <div class="w-1 h-1 bg-stone-300 rounded-full"></div>
+                    <div>💖 Hecho con Amor</div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Tarjeta Visual -->
+            <div class="lg:col-span-5 relative flex justify-center">
+                <div class="relative w-full max-w-sm">
+                    <!-- Marco Brillante -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-amber-400 to-amber-600 rounded-3xl blur-lg opacity-30"></div>
+                    
+                    <!-- Tarjeta Principal -->
+                    <div class="relative bg-stone-900/95 p-4 rounded-3xl border border-amber-200/20 shadow-2xl backdrop-blur-sm overflow-hidden">
+                        <div class="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-amber-200 text-[11px] font-bold text-stone-800 shadow">
+                            ✨ Cera del Alma
+                        </div>
+
+                        <!-- Foto Real -->
+                        <div class="w-full h-80 rounded-2xl overflow-hidden bg-stone-950 flex items-center justify-center p-4">
+                            <img src="img/vela9.jpg.jpeg" alt="Vela Artesanal Cera del Alma" class="max-h-full object-contain transform hover:scale-105 transition duration-700">
+                        </div>
+
+                        <!-- Pie de Foto -->
+                        <div class="mt-4 p-2 flex items-center justify-between">
+                            <div>
+                                <h3 class="text-white font-serif font-bold text-base">Vela de Frasco Premium Recordatorio</h3>
+                                <p class="text-amber-300/80 text-xs">Elaborada a mano en Bogotá</p>
+                            </div>
+                            <span class="bg-amber-100 text-amber-900 font-bold px-3 py-1 rounded-lg text-xs">
+                                $32.000 COP
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Catálogo de Productos -->
+    <section id="catalogo" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900 mb-3">Nuestras Creaciones</h2>
+            <p class="text-brand-700 text-sm sm:text-base">Elige entre nuestros diseños listos para entregar en Bogotá o solicita precio por mayor para tus eventos.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
+            <!-- Los productos se cargan dinámicamente con JavaScript -->
+        </div>
+    </section>
+
+    <!-- Personalizador interactivo -->
+<section id="estudio-creativo" class="py-16 bg-brand-100/40 border-y border-brand-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-brand-600 font-semibold text-xs tracking-widest uppercase">Estudio Creativo</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900 mt-1">Crea tu Vela Personalizada</h2>
+            <p class="text-brand-700 text-sm mt-2">Elige el molde, aroma, color y mensaje para la etiqueta. Mira la simulación en tiempo real.</p>
+        </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                <!-- Simulación Canvas / Vista previa -->
+                <div class="lg:col-span-5 bg-white p-6 rounded-2xl shadow-md border border-brand-200 flex flex-col items-center justify-center text-center">
+                    <span class="text-xs font-semibold text-brand-500 uppercase tracking-wider mb-4">Vista Previa 2D</span>
+                    <canvas id="candleCanvas" width="300" height="320" class="bg-cream/50 rounded-xl mb-4 border border-brand-100"></canvas>
+                    <div id="custom-summary" class="w-full text-left bg-brand-50 p-4 rounded-xl text-xs space-y-1 text-brand-800">
+                        <!-- Resumen dinámico -->
+                    </div>
+                </div>
+
+                <!-- Opciones de Personalización Completa -->
+<div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl shadow-md border border-brand-200 space-y-6">
+    <!-- Molde/Producto -->
+    <div>
+        <label class="block text-sm font-semibold text-brand-900 mb-3">1. Elige el Producto / Molde del Catálogo</label>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <!-- 1. Perro Golden -->
+            <button onclick="setCustomOption('shape', 'golden', 32000)" class="shape-btn active border-2 border-brand-600 bg-brand-50 p-2.5 rounded-xl text-center transition-all">
+                <i data-lucide="dog" class="w-5 h-5 mx-auto mb-1 text-brand-700"></i>
+                <span class="text-xs font-bold block truncate">Perro Golden</span>
+                <span class="text-[10px] text-brand-600 font-semibold">$32.000</span>
+            </button>
+
+            <!-- 2. Bulldog Francés -->
+            <button onclick="setCustomOption('shape', 'bulldog', 28000)" class="shape-btn border-2 border-brand-200 hover:border-brand-400 p-2.5 rounded-xl text-center transition-all">
+                <i data-lucide="dog" class="w-5 h-5 mx-auto mb-1 text-brand-700"></i>
+                <span class="text-xs font-bold block truncate">Bulldog Francés</span>
+                <span class="text-[10px] text-brand-600 font-semibold">$28.000</span>
+            </button>
+
+            <!-- 3. Perro Poodle -->
+            <button onclick="setCustomOption('shape', 'poodle', 28000)" class="shape-btn border-2 border-brand-200 hover:border-brand-400 p-2.5 rounded-xl text-center transition-all">
+                <i data-lucide="dog" class="w-5 h-5 mx-auto mb-1 text-brand-700"></i>
+                <span class="text-xs font-bold block truncate">Perro Poodle</span>
+                <span class="text-[10px] text-brand-600 font-semibold">$28.000</span>
+            </button>
+
+            <!-- 4. Shiba Inu -->
+            <button onclick="setCustomOption('shape', 'shiba', 8000)" class="shape-btn border-2 border-brand-200 hover:border-brand-400 p-2.5 rounded-xl text-center transition-all">
+                <i data-lucide="dog" class="w-5 h-5 mx-auto mb-1 text-brand-700"></i>
+                <span class="text-xs font-bold block truncate">Shiba Inu</span>
+                <span class="text-[10px] text-brand-600 font-semibold">$8.000</span>
+            </button>
+
+            <!-- 5. Perro Pug -->
+            <button onclick="setCustomOption('shape', 'pug', 8000)" class="shape-btn border-2 border-brand-200 hover:border-brand-400 p-2.5 rounded-xl text-center transition-all">
+                <i data-lucide="dog" class="w-5 h-5 mx-auto mb-1 text-brand-700"></i>
+                <span class="text-xs font-bold block truncate">Perro Pug</span>
+                <span class="text-[10px] text-brand-600 font-semibold">$8.000</span>
+            </button>
+
+            <!-- 6. Ángel Querubín -->
+            <button onclick="setCustomOption('shape', 'angel', 12000)" class="shape-btn border-2 border-brand-200 hover:border-brand-400 p-2.5 rounded-xl text-center transition-all">
+                <i data-lucide="sparkles" class="w-5 h-5 mx-auto mb-1 text-brand-700"></i>
+                <span class="text-xs font-bold block truncate">Ángel Querubín</span>
+                <span class="text-[10px] text-brand-600 font-semibold">$12.000</span>
+            </button>
+
+            <!-- 7. Perro Shih Tzu -->
+            <button onclick="setCustomOption('shape', 'shihtzu', 12000)" class="shape-btn border-2 border-brand-200 hover:border-brand-400 p-2.5 rounded-xl text-center transition-all">
+                <i data-lucide="heart" class="w-5 h-5 mx-auto mb-1 text-brand-700"></i>
+                <span class="text-xs font-bold block truncate">Shih Tzu Rosada</span>
+                <span class="text-[10px] text-brand-600 font-semibold">$12.000</span>
+            </button>
+
+            <!-- 8. Bebé Durmiendo -->
+            <button onclick="setCustomOption('shape', 'bebe', 32000)" class="shape-btn border-2 border-brand-200 hover:border-brand-400 p-2.5 rounded-xl text-center transition-all">
+                <i data-lucide="moon" class="w-5 h-5 mx-auto mb-1 text-brand-700"></i>
+                <span class="text-xs font-bold block truncate">Bebé Durmiendo</span>
+                <span class="text-[10px] text-brand-600 font-semibold">$32.000</span>
+            </button>
+
+            <!-- 9. Frasco Recordatorio -->
+            <button onclick="setCustomOption('shape', 'frasco', 32000)" class="shape-btn border-2 border-brand-200 hover:border-brand-400 p-2.5 rounded-xl text-center transition-all">
+                <i data-lucide="package" class="w-5 h-5 mx-auto mb-1 text-brand-700"></i>
+                <span class="text-xs font-bold block truncate">Frasco Recordatorio</span>
+                <span class="text-[10px] text-brand-600 font-semibold">$32.000</span>
+            </button>
+        </div>
+    </div>
+
+                    <!-- Color de Cera -->
+                    <div>
+                        <label class="block text-sm font-semibold text-brand-900 mb-3">2. Color de Cera</label>
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="setCustomOption('color', '#FDFBF7')" class="color-btn w-8 h-8 rounded-full border-2 border-brand-600 ring-2 ring-brand-300 bg-[#FDFBF7]" title="Marfil Natural"></button>
+                            <button onclick="setCustomOption('color', '#FCE7F3')" class="color-btn w-8 h-8 rounded-full border-2 border-transparent bg-[#FCE7F3]" title="Rosa Suave"></button>
+                            <button onclick="setCustomOption('color', '#FEF3C7')" class="color-btn w-8 h-8 rounded-full border-2 border-transparent bg-[#FEF3C7]" title="Amarillo Vainilla"></button>
+                            <button onclick="setCustomOption('color', '#E0E7FF')" class="color-btn w-8 h-8 rounded-full border-2 border-transparent bg-[#E0E7FF]" title="Azul Lavanda"></button>
+                            <button onclick="setCustomOption('color', '#DCFCE7')" class="color-btn w-8 h-8 rounded-full border-2 border-transparent bg-[#DCFCE7]" title="Verde Menta"></button>
+                        </div>
+                    </div>
+
+                    <!-- Aroma -->
+                    <div>
+                        <label class="block text-sm font-semibold text-brand-900 mb-3">3. Esencia & Aroma</label>
+                        <select id="aroma-select" onchange="setCustomOption('aroma', this.value)" class="w-full bg-cream border border-brand-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                            <option value="Vainilla & Canela">Vainilla & Canela Calandradora</option>
+                            <option value="Lavanda & Manzanilla">Lavanda & Manzanilla Relajante</option>
+                            <option value="Café & Caramelo">Café Colombiano & Caramelo</option>
+                            <option value="Citrus & Jengibre">Citrus Fresco & Jengibre</option>
+                            <option value="Frutos Rojos">Frutos Rojos Silvestres</option>
+                        </select>
+                    </div>
+
+                    <!-- Texto Personalizado -->
+                    <div>
+                        <label class="block text-sm font-semibold text-brand-900 mb-1">4. Mensaje para la Etiqueta (Opcional)</label>
+                        <input type="text" id="label-text" oninput="setCustomOption('label', this.value)" placeholder="Ej: Con amor para Mamá / Feliz Aniversario" maxlength="30" class="w-full bg-cream border border-brand-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                    </div>
+
+                    <!-- Precio final y agregar -->
+                    <div class="pt-4 border-t border-brand-200 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-brand-600 block">Precio Personalizado:</span>
+                            <span id="custom-price" class="font-serif text-2xl font-bold text-brand-900">$28.000</span>
+                        </div>
+                        <button onclick="addCustomToCart()" class="bg-brand-700 hover:bg-brand-800 text-white font-medium px-6 py-3 rounded-xl transition-all flex items-center gap-2 shadow-md">
+                            <i data-lucide="plus" class="w-4 h-4"></i> Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de Precios al por Mayor -->
+    <section id="mayoreo" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-brand-800 to-brand-900 text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-xl">
+            <div class="relative z-10 max-w-2xl space-y-4">
+                <span class="bg-brand-600/50 text-brand-100 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold">Oportunidad de Negocio & Eventos</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold">¿Necesitas pedidos al por mayor?</h2>
+                <p class="text-brand-100 text-sm sm:text-base leading-relaxed">
+                    Ofrecemos precios especiales para recuerdos de bodas, bautizos, detalles corporativos o para revender en tu negocio en Bogotá.
+                </p>
+                <button onclick="openWhatsAppConsult()" class="bg-white text-brand-900 hover:bg-brand-100 font-bold px-6 py-3 rounded-xl transition-all inline-flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-5 h-5 text-green-600"></i> Cotizar por Mayor en WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrito Deslizable & Proceso de Pago -->
+<div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300">
+    <!-- Fondo oscuro -->
+    <div onclick="toggleCart()" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+    <div class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl pointer-events-auto flex flex-col justify-between transform translate-x-full transition-transform duration-300 custom-scrollbar overflow-y-auto" id="drawer-content">
+        
+        <!-- Encabezado Carrito -->
+        <div class="p-6 border-b border-brand-100 flex items-center justify-between bg-cream">
+            <div class="flex items-center gap-2">
+                <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-700"></i>
+                <h3 class="font-serif text-xl font-bold text-brand-900">Tu Pedido</h3>
+            </div>
+            <button onclick="toggleCart()" class="text-brand-500 hover:text-brand-800 p-1">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Lista de items -->
+        <div id="cart-items" class="p-6 space-y-4 flex-1 overflow-y-auto">
+            <!-- Se llena dinámicamente desde JS -->
+        </div>
+
+        <!-- Checkout / Selección de Método de Pago -->
+        <div class="p-6 border-t border-brand-100 bg-brand-50/50 space-y-4">
+            
+            <!-- Selección de Método de Pago -->
+            <div>
+                <label class="block text-xs font-bold text-brand-900 uppercase tracking-wider mb-2">Método de Pago:</label>
+                <div class="grid grid-cols-2 gap-2">
+                    <button type="button" id="payMethodNequiBtn" onclick="selectPaymentMethod('nequi')" class="p-2.5 border-2 border-brand-700 bg-brand-100 rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold text-brand-900 transition-all">
+                        <i data-lucide="qr-code" class="w-4 h-4 text-purple-700"></i> Nequi (QR)
+                    </button>
+                    <button type="button" id="payMethodCODBtn" onclick="selectPaymentMethod('cod')" class="p-2.5 border-2 border-brand-200 bg-white rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold text-brand-700 transition-all">
+                        <i data-lucide="truck" class="w-4 h-4 text-amber-700"></i> Contra Entrega
+                    </button>
+                </div>
+            </div>
+
+            <!-- Totales -->
+            <div class="space-y-1.5 text-sm pt-2 border-t border-brand-200">
+                <div class="flex justify-between text-brand-700">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal" class="font-semibold">$0</span>
+                </div>
+                <div class="flex justify-between text-brand-700">
+                    <span>Envío (Bogotá urbana):</span>
+                    <span class="font-semibold text-brand-600">$8.000</span>
+                </div>
+                <div class="flex justify-between text-brand-900 text-lg font-bold pt-2 border-t border-brand-200">
+                    <span>Total:</span>
+                    <span id="cart-total">$0</span>
+                </div>
+            </div>
+
+            <!-- Botón Generar Ticket / Procesar Pedido -->
+            <button onclick="processOrderTicket()" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+                <i data-lucide="receipt" class="w-5 h-5"></i> Generar Ticket & Confirmar
+            </button>
+
+            <!-- Acceso directo a WhatsApp -->
+            <button onclick="sendOrderWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm">
+                <i data-lucide="message-square" class="w-4 h-4"></i> Asesoría Rápida por WhatsApp
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Nequi QR & Ticket Resumen de Pedido -->
+<div id="nequi-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center space-y-4 relative shadow-2xl border border-brand-200">
+        <button onclick="closeNequiModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+
+        <!-- Encabezado del Ticket -->
+        <div class="border-b border-dashed border-brand-300 pb-3">
+            <h3 class="font-serif text-2xl font-bold text-gray-900">Cera del Alma</h3>
+            <p class="text-xs text-stone-500">Bogotá, Colombia • Hecho a Mano</p>
+            <span id="ticket-order-num" class="inline-block mt-2 bg-amber-100 text-amber-900 text-[11px] font-mono px-2.5 py-0.5 rounded-full font-bold">Orden #CA-0000</span>
+        </div>
+
+        <!-- Opción 1: Contenedor Pago Nequi (Con QR Ampliado) -->
+        <div id="nequi-qr-container" class="bg-purple-50 p-4 rounded-2xl border border-purple-100 space-y-2">
+            <p class="text-xs font-bold text-purple-900">Escanea el QR desde tu App Nequi:</p>
+            
+            <!-- Contenedor ajustado con zoom directo al código QR -->
+            <div class="w-60 h-60 mx-auto bg-white p-2 rounded-2xl border-2 border-purple-300 shadow-md flex items-center justify-center overflow-hidden relative">
+                <img src="img/CodigoQR.jpeg" alt="QR Nequi Cera del Alma" class="w-full h-full object-cover scale-135 transform transition-transform">
+            </div>
+            
+            <p class="text-sm font-extrabold text-purple-950 mt-2">Nequi: 321 429 1422</p>
+            <p class="text-xs text-purple-800 font-semibold">Titular: Cera del Alma</p>
+        </div>
+
+        <!-- Opción 2: Contenedor Pago Contra Entrega (Se muestra si elige Contra Entrega) -->
+        <div id="cod-container" class="bg-stone-50 p-4 rounded-2xl border border-stone-200 text-left space-y-1 hidden">
+            <div class="flex items-center gap-2 text-stone-900 font-bold text-xs">
+                <i data-lucide="truck" class="w-4 h-4 text-amber-800"></i>
+                <span>Pago Contra Entrega (Bogotá)</span>
+            </div>
+            <p class="text-[11px] text-stone-600 leading-tight">
+                Pagas en efectivo o por transferencia cuando recibas tu pedido en tu domicilio con el domiciliario.
+            </p>
+        </div>
+
+        <!-- Resumen en Formato Ticket -->
+        <div id="ticket-summary-details" class="text-left text-xs space-y-1 font-mono bg-stone-50 p-3 rounded-xl border border-stone-200">
+            <!-- Se completa dinámicamente desde JS -->
+        </div>
+
+        <!-- Indicaciones y Confirmación por WhatsApp -->
+        <button onclick="sendOrderWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2 text-sm shadow-md">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i> Enviar Ticket por WhatsApp
+        </button>
+    </div>
+</div>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573214291422?text=Hola,%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20las%20velas%20de%20Cera%20del%20Alma." target="_blank" class="fixed bottom-6 right-6 z-40 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:scale-110 transition-all flex items-center justify-center">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- Footer / Pie de Página -->
+    <footer id="contacto" class="bg-brand-900 text-brand-100 py-12 border-t border-brand-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center gap-2 mb-3">
+                    <i data-lucide="flame" class="w-6 h-6 text-brand-400"></i>
+                    <span class="font-serif text-2xl font-bold text-white">Cera del Alma</span>
+                </div>
+                <p class="text-xs text-brand-300 leading-relaxed">
+                    No son solo velas, son momentos. Transformamos cera natural en figuras artesanales únicas que llenan tu hogar de calma, luz y aromas inolvidables. Diseña la tuya o descubre la colección exclusiva hecha a mano en Bogotá.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-lg font-semibold text-white mb-3">Contacto Directo</h4>
+                <ul class="text-xs space-y-2 text-brand-200">
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4 text-brand-400"></i> +57 321 429 1422
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-brand-400"></i> Bogotá, Colombia
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="truck" class="w-4 h-4 text-brand-400"></i> Envíos locales en Bogotá
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-lg font-semibold text-white mb-3">Horario de Atención</h4>
+                <p class="text-xs text-brand-200 leading-relaxed">
+                    Lunes a Sábado: 8:00 AM - 6:00 PM<br>
+                    Atención personalizada por WhatsApp.
+                </p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-brand-800 flex flex-col sm:flex-row items-center justify-between text-xs text-brand-400 gap-4">
+            <!-- Copyright a la izquierda -->
+            <p>© 2026 Cera del Alma. Todos los derechos reservados.</p>
+
+            <!-- Tu firma a la derecha con el icono -->
+            <div class="flex items-center gap-1.5 font-medium text-brand-200">
+                <i data-lucide="feather" class="w-3.5 h-3.5 text-amber-400"></i>
+                <span>Hecho por <strong class="text-white font-bold">Ingeniero Jaramillo</strong></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica JavaScript de la aplicación -->
+    <script>
+        // Inicializar iconos Lucide
+        if (window.lucide) lucide.createIcons();
+
+        // Número de contacto oficial de WhatsApp
+        const PHONE_NUMBER = "573214291422";
+
+        // Base de Datos de Productos con Precios Reales
+        const products = [
+            {
+                id: 1,
+                name: "Vela Perro Golden / Labrador",
+                price: 32000,
+                wholesalePrice: 25000,
+                image: "img/vela1.jpg.jpeg",
+                desc: "Vela decorativa artesanal 3D en figura de Perro Golden. Ideal para amantes de las mascotas o para regalar un detalle único."
+            },
+            {
+                id: 2,
+                name: "Vela Bulldog Francés",
+                price: 28000,
+                wholesalePrice: 20000,
+                image: "img/vela2.jpg.jpeg",
+                desc: "Vela decorativa artesanal 3D en figura de Bulldog Francés. Ideal para amantes de las mascotas o para regalar un detalle único."
+            },
+            {
+                id: 3,
+                name: "Vela French Poodle",
+                price: 28000,
+                wholesalePrice: 20000,
+                image: "img/vela3.jpg.jpeg",
+                desc: "Vela decorativa 3D en figura de French Poodle. Ideal para amantes de las mascotas o para regalar un detalle único."
+            },
+            {
+                id: 4,
+                name: "Vela Shiba Inu",
+                price: 8000,
+                wholesalePrice: 4000,
+                image: "img/vela4.jpg.jpeg",
+                desc: "Vela decorativa 3D en figura de Shiba Inu. Ideal para amantes de las mascotas o para regalar un detalle único."
+            },
+            {
+                id: 5,
+                name: "Vela Perro Pug",
+                price: 8000,
+                wholesalePrice: 4000,
+                image: "img/vela5.jpg.jpeg",
+                desc: "Vela decorativa 3D en figura de Pug. Ideal para amantes de las mascotas o para regalar un detalle único."
+            },
+            {
+                id: 6,
+                name: "Vela Ángel Querubín",
+                price: 12000,
+                wholesalePrice: 6500,
+                image: "img/vela6.jpg.jpeg",
+                desc: "Vela decorativa 3D en figura de Ángel Querubín. Ideal para recordatorios de bautizos, comuniones y eventos."
+            },
+            {
+                id: 7,
+                name: "Vela Perro Shih Tzu",
+                price: 12000,
+                wholesalePrice: 6000,
+                image: "img/vela7.jpg.jpeg",
+                desc: "Vela decorativa 3D en figura de perrito con acabado en tono rosado. Elaborada a mano con textura definida en el pelaje."
+            },
+            {
+                id: 8,
+                name: "Vela Bebé Durmiendo",
+                price: 32000,
+                wholesalePrice: 25000,
+                image: "img/vela8.jpg.jpeg",
+                desc: "Vela decorativa 3D en figura de bebé durmiendo. Ideal para baby showers, bautizos y nacimientos."
+            },
+            {
+                id: 9,
+                name: "Vela de Frasco Premium Recordatorio",
+                price: 32000,
+                wholesalePrice: 25000,
+                image: "img/vela9.jpg.jpeg",
+                desc: "Vela aromática en frasco de vidrio con tapa de corcho, etiqueta personalizada y ramo de flores preservadas. Perfecta para recordatorios."
+            }
+        ];
+
+        // Estado Global del Carrito
+        let cart = [];
+        let selectedPaymentMethod = 'nequi';
+        let currentOrderTicket = null;
+
+        // Estado de la Vela Personalizada
+        let currentCustom = {
+            shape: 'golden',
+            color: '#FFFFFF',
+            aroma: 'Vainilla & Canela',
+            label: '',
+            price: 32000
+        };
+
+        // Renderizar Catálogo de Productos con Click/Touch para Ampliar Imagen
+function renderProducts() {
+    const grid = document.getElementById('products-grid') || document.getElementById('product-grid');
+    if (!grid) return;
+
+    grid.innerHTML = products.map(p => `
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-brand-100 flex flex-col justify-between">
+            <div>
+                <!-- Se agrega cursor-pointer y onclick para abrir la imagen ampliada -->
+                <div onclick="openImageModal('${p.image}', '${p.name}')" class="h-64 overflow-hidden relative bg-neutral-900 flex items-center justify-center p-2 cursor-pointer group">
+                    <img src="${p.image}" alt="${p.name}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://via.placeholder.com/300?text=Vela+Artesanal'">
+                    <!-- Indicador visual flotante -->
+                    <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                    </div>
+                </div>
+                <div class="p-5 space-y-2">
+                    <h3 class="font-serif text-lg font-bold text-brand-900">${p.name}</h3>
+                    <p class="text-xs text-brand-600 line-clamp-2">${p.desc}</p>
+                    <div class="pt-2 flex items-baseline justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-brand-900">$${p.price.toLocaleString('es-CO')}</span>
+                            <span class="text-[10px] text-brand-500 block">Por unidad</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs font-semibold text-brand-700">$${p.wholesalePrice.toLocaleString('es-CO')}</span>
+                            <span class="text-[10px] text-brand-500 block">Al por mayor (+12)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-5 pt-0">
+                <button onclick="addToCart(${p.id})" class="w-full bg-brand-100 hover:bg-brand-200 text-brand-900 font-medium py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm">
+                    <i data-lucide="plus" class="w-4 h-4"></i> Agregar al Carrito
+                </button>
+            </div>
+        </div>
+    `).join('');
+    if (window.lucide) lucide.createIcons();
+}
+
+        // Diccionario completo de colores
+        const colorNames = {
+            '#FFFFFF': 'Blanco Natural / Cera Natural',
+            '#FDFBF7': 'Blanco Natural / Cera Natural',
+            '#FCE7F3': 'Rosado Pastel',
+            '#FEF3C7': 'Amarillo Miel',
+            '#E0E7FF': 'Azul Celeste',
+            '#DBEAFE': 'Azul Celeste',
+            '#D1FAE5': 'Verde Menta / Eucalipto',
+            '#DCFCE7': 'Verde Menta / Eucalipto',
+            '#F3E8FF': 'Lila / Lavanda'
+        };
+
+        // Mapeo legible de moldes
+        const shapeNames = {
+            'golden': 'Vela Escultural Perro Golden ($32.000)',
+            'bulldog': 'Vela Escultural Bulldog Francés ($28.000)',
+            'poodle': 'Vela Escultural Perro Poodle ($28.000)',
+            'shiba': 'Vela Shiba Inu ($8.000)',
+            'pug': 'Vela Perro Pug ($8.000)',
+            'angel': 'Vela Ángel Querubín ($12.000)',
+            'shihtzu': 'Vela Perro Shih Tzu ($12.000)',
+            'bebe': 'Vela Bebé Durmiendo ($32.000)',
+            'frasco': 'Vela de Frasco Premium Recordatorio ($32.000)',
+            'vaso': 'Vela de Frasco Premium Recordatorio ($32.000)',
+            'burbuja': 'Vela Perro Pug ($8.000)',
+            'escultural': 'Vela Ángel Querubín ($12.000)',
+            'escultura': 'Vela Ángel Querubín ($12.000)'
+        };
+
+        // Simulación en Canvas de la Vela Personalizada
+        function drawCandle() {
+            const canvas = document.getElementById('candleCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            const imageMap = {
+                'golden': 'img/vela1.jpg.jpeg',
+                'bulldog': 'img/vela2.jpg.jpeg',
+                'poodle': 'img/vela3.jpg.jpeg',
+                'shiba': 'img/vela4.jpg.jpeg',
+                'pug': 'img/vela5.jpg.jpeg',
+                'angel': 'img/vela6.jpg.jpeg',
+                'shihtzu': 'img/vela7.jpg.jpeg',
+                'bebe': 'img/vela8.jpg.jpeg',
+                'frasco': 'img/vela9.jpg.jpeg',
+                'vaso': 'img/vela9.jpg.jpeg',
+                'burbuja': 'img/vela5.jpg.jpeg',
+                'escultural': 'img/vela6.jpg.jpeg',
+                'escultura': 'img/vela6.jpg.jpeg'
+            };
+
+            const imageSrc = imageMap[currentCustom.shape] || (currentCustom.shape.includes('img/') ? currentCustom.shape : `img/${currentCustom.shape}`);
+
+            const img = new Image();
+            img.onload = function () {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#1c1917';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                const hRatio = (canvas.width - 20) / img.width;
+                const vRatio = (canvas.height - 20) / img.height;
+                const ratio = Math.min(hRatio, vRatio);
+                const centerShiftX = (canvas.width - img.width * ratio) / 2;
+                const centerShiftY = (canvas.height - img.height * ratio) / 2;
+
+                ctx.drawImage(img, 0, 0, img.width, img.height, centerShiftX, centerShiftY, img.width * ratio, img.height * ratio);
+
+                // Badge de Color
+                const selectedColorHex = (currentCustom.color || '#FFFFFF').toUpperCase();
+                const selectedColorName = colorNames[selectedColorHex] || 'Color Personalizado';
+
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.92)';
+                ctx.beginPath();
+                ctx.roundRect(10, 10, 175, 28, 6);
+                ctx.fill();
+
+                ctx.fillStyle = selectedColorHex;
+                ctx.beginPath();
+                ctx.arc(24, 24, 7, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.strokeStyle = '#D1A575';
+                ctx.lineWidth = 1;
+                ctx.stroke();
+
+                ctx.fillStyle = '#1c1917';
+                ctx.font = 'bold 10px sans-serif';
+                ctx.textAlign = 'left';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(`Cera: ${selectedColorName.substring(0, 20)}`, 37, 24);
+
+                // Etiqueta
+                if (currentCustom.label) {
+                    const labelText = currentCustom.label.substring(0, 18);
+                    const rectWidth = 140;
+                    const rectHeight = 28;
+                    const rectX = (canvas.width - rectWidth) / 2;
+                    const rectY = canvas.height - 40;
+
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+                    ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+                    ctx.strokeStyle = '#D1A575';
+                    ctx.lineWidth = 1.5;
+                    ctx.strokeRect(rectX, rectY, rectWidth, rectHeight);
+
+                    ctx.fillStyle = '#4A3B32';
+                    ctx.font = 'bold 11px sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText(`🏷️ ${labelText}`, canvas.width / 2, rectY + 14);
+                }
+            };
+
+            img.onerror = function () {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#1c1917';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#f59e0b';
+                ctx.font = '14px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText("Vista Previa Vela", canvas.width / 2, canvas.height / 2);
+            };
+
+            img.src = imageSrc;
+
+            const summaryEl = document.getElementById('custom-summary');
+            if (summaryEl) {
+                const shapeLabel = shapeNames[currentCustom.shape] || currentCustom.shape.toUpperCase();
+                const selectedColorHex = (currentCustom.color || '#FFFFFF').toUpperCase();
+                const colorLabel = colorNames[selectedColorHex] || 'Color Personalizado';
+
+                summaryEl.innerHTML = `
+                    <p><strong>Estilo / Molde:</strong> ${shapeLabel}</p>
+                    <p><strong>Color de Cera:</strong> ${colorLabel}</p>
+                    <p><strong>Aroma:</strong> ${currentCustom.aroma || 'Sin aroma'}</p>
+                    <p><strong>Etiqueta:</strong> ${currentCustom.label || 'Sin texto'}</p>
+                `;
+            }
+        }
+
+        // Modificar Opciones de Personalización
+        function setCustomOption(type, value, price = null) {
+            currentCustom[type] = value;
+            if (price) {
+                currentCustom.price = price;
+                const priceEl = document.getElementById('custom-price');
+                if (priceEl) {
+                    priceEl.innerText = `$${price.toLocaleString('es-CO')}`;
+                }
+            }
+
+            if (type === 'shape') {
+                document.querySelectorAll('.shape-btn').forEach(b => {
+                    b.classList.remove('border-brand-600', 'bg-brand-50');
+                    b.classList.add('border-brand-200');
+                });
+                if (window.event && window.event.currentTarget) {
+                    window.event.currentTarget.classList.add('border-brand-600', 'bg-brand-50');
+                }
+            }
+
+            drawCandle();
+        }
+
+        // Manejo del Carrito
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === productId && !item.isCustom);
+
+            if (existing) {
+                existing.qty++;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    wholesalePrice: product.wholesalePrice,
+                    qty: 1,
+                    isCustom: false
+                });
+            }
+            updateCart();
+            toggleCart(true);
+        }
+
+        function addCustomToCart() {
+            const shapeLabel = shapeNames[currentCustom.shape] || currentCustom.shape.toUpperCase();
+            const colorLabel = colorNames[(currentCustom.color || '#FFFFFF').toUpperCase()] || 'Blanco Natural';
+
+            cart.push({
+                id: Date.now(),
+                name: `Vela Personalizada (${shapeLabel.split('(')[0].trim()})`,
+                price: currentCustom.price || 32000,
+                wholesalePrice: currentCustom.price || 32000,
+                qty: 1,
+                isCustom: true,
+                details: `Color: ${colorLabel} | Aroma: ${currentCustom.aroma || 'Sin aroma'} | Label: ${currentCustom.label || 'Sin texto'}`
+            });
+            updateCart();
+            toggleCart(true);
+        }
+
+        function updateCart() {
+            const countEl = document.getElementById('cart-count');
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            if (countEl) countEl.innerText = totalQty;
+
+            const itemsContainer = document.getElementById('cart-items');
+            if (!itemsContainer) return;
+
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = '<p class="text-center text-sm text-brand-500 py-8">Tu carrito está vacío</p>';
+                const subtotalEl = document.getElementById('cart-subtotal');
+                const totalEl = document.getElementById('cart-total');
+                if (subtotalEl) subtotalEl.innerText = '$0';
+                if (totalEl) totalEl.innerText = '$8.000';
+                return;
+            }
+
+            itemsContainer.innerHTML = cart.map((item, index) => {
+                const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
+                return `
+                    <div class="flex items-center justify-between border-b border-brand-100 pb-3">
+                        <div>
+                            <h4 class="text-sm font-semibold text-brand-900">${item.name}</h4>
+                            ${item.details ? `<p class="text-[11px] text-brand-600">${item.details}</p>` : ''}
+                            <span class="text-xs font-bold text-brand-700">$${effectivePrice.toLocaleString('es-CO')}</span>
+                            ${totalQty >= 12 ? '<span class="text-[9px] bg-green-100 text-green-800 px-1.5 py-0.5 rounded ml-1 font-bold">Precio Mayor</span>' : ''}
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="changeQty(${index}, -1)" class="w-6 h-6 rounded bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-xs">-</button>
+                            <span class="text-xs font-medium">${item.qty}</span>
+                            <button onclick="changeQty(${index}, 1)" class="w-6 h-6 rounded bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-xs">+</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            const subtotal = cart.reduce((sum, item) => {
+                const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
+                return sum + (effectivePrice * item.qty);
+            }, 0);
+
+            const shipping = subtotal > 0 ? 8000 : 0;
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const totalEl = document.getElementById('cart-total');
+
+            if (subtotalEl) subtotalEl.innerText = `$${subtotal.toLocaleString('es-CO')}`;
+            if (totalEl) totalEl.innerText = `$${(subtotal + shipping).toLocaleString('es-CO')}`;
+        }
+
+        function changeQty(index, delta) {
+            cart[index].qty += delta;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCart();
+        }
+
+        function toggleCart(forceOpen = false) {
+            const drawer = document.getElementById('cart-drawer');
+            const content = document.getElementById('drawer-content');
+            if (!drawer || !content) return;
+
+            if (forceOpen || drawer.classList.contains('opacity-0')) {
+                drawer.classList.remove('opacity-0', 'pointer-events-none');
+                content.classList.remove('translate-x-full');
+            } else {
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+                content.classList.add('translate-x-full');
+            }
+        }
+
+        // Selección de Método de Pago
+        function selectPaymentMethod(method) {
+            selectedPaymentMethod = method;
+            const nequiBtn = document.getElementById('payMethodNequiBtn');
+            const codBtn = document.getElementById('payMethodCODBtn');
+
+            if (method === 'nequi') {
+                if (nequiBtn) nequiBtn.className = "p-2.5 border-2 border-brand-700 bg-brand-100 rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold text-brand-900 transition-all";
+                if (codBtn) codBtn.className = "p-2.5 border-2 border-brand-200 bg-white rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold text-brand-700 transition-all";
+            } else {
+                if (codBtn) codBtn.className = "p-2.5 border-2 border-brand-700 bg-brand-100 rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold text-brand-900 transition-all";
+                if (nequiBtn) nequiBtn.className = "p-2.5 border-2 border-brand-200 bg-white rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold text-brand-700 transition-all";
+            }
+        }
+
+        // Generar Ticket de Pedido y Mostrar Modal (Nequi con QR real o Contra Entrega)
+        function processOrderTicket() {
+            if (cart.length === 0) {
+                alert("Tu carrito está vacío. Agrega un producto primero.");
+                return;
+            }
+
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            const shippingCost = 8000;
+            const subtotal = cart.reduce((sum, item) => {
+                const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
+                return sum + (effectivePrice * item.qty);
+            }, 0);
+
+            const total = subtotal + shippingCost;
+            const orderNum = 'CA-' + Math.floor(1000 + Math.random() * 9000);
+
+            currentOrderTicket = {
+                num: orderNum,
+                method: selectedPaymentMethod === 'nequi' ? 'Transferencia Nequi' : 'Pago Contra Entrega (Bogotá)',
+                subtotal: subtotal,
+                shipping: shippingCost,
+                total: total,
+                items: [...cart]
+            };
+
+            const orderNumEl = document.getElementById('ticket-order-num');
+            if (orderNumEl) orderNumEl.innerText = `Orden #${orderNum}`;
+
+            const qrContainer = document.getElementById('nequi-qr-container');
+            const codContainer = document.getElementById('cod-container');
+
+            if (selectedPaymentMethod === 'nequi') {
+                if (qrContainer) qrContainer.classList.remove('hidden');
+                if (codContainer) codContainer.classList.add('hidden');
+            } else {
+                if (qrContainer) qrContainer.classList.add('hidden');
+                if (codContainer) codContainer.classList.remove('hidden');
+            }
+
+            let itemsHtml = cart.map(i => {
+                const effectivePrice = (totalQty >= 12 && !i.isCustom) ? i.wholesalePrice : i.price;
+                return `<div class="flex justify-between"><span>${i.qty}x ${i.name.substring(0, 18)}</span><span>$${(effectivePrice * i.qty).toLocaleString('es-CO')}</span></div>`;
+            }).join('');
+
+            const ticketDetails = document.getElementById('ticket-summary-details');
+            if (ticketDetails) {
+                ticketDetails.innerHTML = `
+                    ${itemsHtml}
+                    <div class="border-t border-dashed border-stone-300 pt-1 mt-1 flex justify-between">
+                        <span>Envío Bogotá:</span>
+                        <span>$${shippingCost.toLocaleString('es-CO')}</span>
+                    </div>
+                    <div class="flex justify-between font-bold text-stone-900 pt-1">
+                        <span>Total A Pagar:</span>
+                        <span class="text-amber-800">$${total.toLocaleString('es-CO')}</span>
+                    </div>
+                    <div class="pt-1 text-[10px] text-stone-500">Método: ${currentOrderTicket.method}</div>
+                `;
+            }
+
+            const modal = document.getElementById('nequi-modal');
+            if (modal) modal.classList.remove('hidden');
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function closeNequiModal() {
+            const modal = document.getElementById('nequi-modal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        // Enviar pedido estructurado a WhatsApp
+        function sendOrderWhatsApp() {
+            if (cart.length === 0) {
+                alert("Agrega productos al carrito antes de confirmar tu pedido.");
+                return;
+            }
+
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            let msg = `✨ *NUEVO PEDIDO - CERA DEL ALMA* ✨\n\n`;
+            msg += `📍 *Ciudad de Entrega:* Bogotá\n`;
+            if (currentOrderTicket) msg += `📋 *Orden:* #${currentOrderTicket.num}\n\n`;
+            msg += `📦 *Detalle del Pedido:*\n`;
+
+            cart.forEach(item => {
+                const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
+                msg += `• ${item.qty}x ${item.name}`;
+                if (item.details) msg += ` (${item.details})`;
+                msg += ` - $${(effectivePrice * item.qty).toLocaleString('es-CO')}\n`;
+            });
+
+            const subtotal = cart.reduce((sum, item) => {
+                const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
+                return sum + (effectivePrice * item.qty);
+            }, 0);
+
+            const paymentText = selectedPaymentMethod === 'nequi' ? 'Transferencia Nequi (321 429 1422)' : 'Pago Contra Entrega en Bogotá';
+
+            msg += `\n💰 *Subtotal:* $${subtotal.toLocaleString('es-CO')}`;
+            msg += `\n🚚 *Envío Bogotá:* $8.000`;
+            msg += `\n🏷️ *TOTAL A PAGAR:* $${(subtotal + 8000).toLocaleString('es-CO')}\n\n`;
+            msg += `📱 *Método de Pago Seleccionado:* ${paymentText}\n\n`;
+            msg += `Por favor confírmanos los datos de envío (Nombre, Dirección exacta en Bogotá y Barrio) para agendar la entrega.`;
+
+            const url = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank');
+        }
+        // Abrir modal con la imagen grande
+        function openImageModal(imgSrc, title) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-image-src');
+            const modalTitle = document.getElementById('modal-image-title');
+
+            if (modal && modalImg) {
+                modalImg.src = imgSrc;
+                if (modalTitle) modalTitle.innerText = title;
+                modal.classList.remove('hidden');
+                if (window.lucide) lucide.createIcons();
+            }
+        }
+
+        // Cerrar modal de imagen
+        function closeImageModal() {
+            const modal = document.getElementById('image-modal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        function openWhatsAppConsult() {
+            const msg = "Hola, me interesa solicitar una cotización de velas al por mayor para un evento/negocio en Bogotá.";
+            window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // Inicialización al cargar la página
+        window.onload = function() {
+            drawCandle();
+            renderProducts();
+            updateCart();
+        };
+
+        function openWhatsAppConsult() {
+            const msg = "Hola, me interesa solicitar una cotización de velas al por mayor para un evento/negocio en Bogotá.";
+            window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // Inicialización al cargar la página
+        window.onload = function() {
+            drawCandle();
+            renderProducts();
+            updateCart();
+        };
+    </script>
+    </script>
+
+    <!-- MODAL VISUALIZADOR DE IMAGEN EN PANTALLA COMPLETA (LIGHTBOX) -->
+    <div id="image-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4 transition-all duration-300" onclick="closeImageModal()">
+        <div class="relative max-w-3xl w-full max-h-[90vh] flex flex-col items-center justify-center" onclick="event.stopPropagation()">
+            <button onclick="closeImageModal()" class="absolute -top-12 right-0 text-white hover:text-amber-400 p-2 text-sm font-bold flex items-center gap-1 transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i> Cerrar
+            </button>
+            <img id="modal-image-src" src="" alt="Vela Ampliada" class="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/20">
+            <p id="modal-image-title" class="text-white font-serif text-lg font-bold mt-4 text-center"></p>
+        </div>
+    </div>
+</body>
+</html>
