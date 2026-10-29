@@ -175,6 +175,107 @@
         </div>
     </section>
 
+    <!-- SECCIÓN: NOVEDADES Y TENDENCIAS DE TEMPORADA -->
+    <section id="novedades" class="py-12 bg-gradient-to-b from-amber-50/60 to-white border-b border-brand-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+                <div>
+                    <div class="inline-flex items-center gap-1.5 bg-amber-100 text-amber-900 px-3 py-1 rounded-full text-xs font-bold tracking-wide mb-2 shadow-sm">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-600"></i>
+                        <span>¡Lo Último en el Taller!</span>
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-brand-900">
+                        Nuevos Modelos de Temporada ✨
+                    </h2>
+                    <p class="text-stone-600 text-sm mt-1">
+                        Diseños recién moldeados y listos para enviar hoy mismo en Bogotá.
+                    </p>
+                </div>
+                <a href="#catalogo" class="inline-flex items-center gap-1 text-sm font-bold text-amber-800 hover:text-amber-900 transition-colors group">
+                    <span>Ver catálogo completo</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Contenedor de Tarjetas de Novedades -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Tarjeta 1: Gatito Místico -->
+                <div class="bg-white rounded-2xl p-4 shadow-lg shadow-stone-200/50 border border-amber-200/80 hover:border-amber-400 transition-all duration-300 relative flex flex-col justify-between group">
+                    <div class="absolute top-3 right-3 z-10 bg-amber-500 text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md animate-pulse">
+                        ¡Nuevo!
+                    </div>
+                    <div>
+                        <div class="aspect-square w-full rounded-xl overflow-hidden bg-stone-100 mb-4 relative">
+                            <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80" alt="Gatito Místico" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-stone-900">Gatito Místico</h3>
+                        <p class="text-xs text-stone-500 mt-1 line-clamp-2">Escultura detallada con acabados artesanales. Perfecta para amantes de los felinos y la buena energía.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-stone-400 block font-medium">Precio Detalle</span>
+                            <span class="text-base font-extrabold text-amber-900">$12.000</span>
+                        </div>
+                        <button onclick="addToCart(11)" class="bg-amber-800 hover:bg-amber-900 text-white p-2.5 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md transition-all active:scale-95">
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                            <span>Pedir Ahora</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Ramo de Rosas -->
+                <div class="bg-white rounded-2xl p-4 shadow-lg shadow-stone-200/50 border border-amber-200/80 hover:border-amber-400 transition-all duration-300 relative flex flex-col justify-between group">
+                    <div class="absolute top-3 right-3 z-10 bg-rose-600 text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
+                        Tendencia 🌹
+                    </div>
+                    <div>
+                        <div class="aspect-square w-full rounded-xl overflow-hidden bg-stone-100 mb-4 relative">
+                            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80" alt="Ramo de Rosas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-stone-900">Ramo de Rosas Escultural</h3>
+                        <p class="text-xs text-stone-500 mt-1 line-clamp-2">Pieza maestra de cera con fragancia concentrada. Ideal para regalos románticos o centro de mesa.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-stone-400 block font-medium">Precio Exclusivo</span>
+                            <span class="text-base font-extrabold text-amber-900">$55.000</span>
+                        </div>
+                        <button onclick="addToCart(15)" class="bg-amber-800 hover:bg-amber-900 text-white p-2.5 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md transition-all active:scale-95">
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                            <span>Pedir Ahora</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Jardín de Suculentas -->
+                <div class="bg-white rounded-2xl p-4 shadow-lg shadow-stone-200/50 border border-amber-200/80 hover:border-amber-400 transition-all duration-300 relative flex flex-col justify-between group sm:col-span-2 lg:col-span-1">
+                    <div class="absolute top-3 right-3 z-10 bg-emerald-600 text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
+                        Más Pedido 🌿
+                    </div>
+                    <div>
+                        <div class="aspect-square w-full rounded-xl overflow-hidden bg-stone-100 mb-4 relative">
+                            <img src="https://images.unsplash.com/photo-1602928321679-560bb453f190?auto=format&fit=crop&w=600&q=80" alt="Jardín de Suculentas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-stone-900">Jardín Suculentas</h3>
+                        <p class="text-xs text-stone-500 mt-1 line-clamp-2">Composición Botánica en vaso artesanal con aromas de bambú y té verde.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-stone-400 block font-medium">Precio Detalle</span>
+                            <span class="text-base font-extrabold text-amber-900">$20.000</span>
+                        </div>
+                        <button onclick="addToCart(17)" class="bg-amber-800 hover:bg-amber-900 text-white p-2.5 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md transition-all active:scale-95">
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                            <span>Pedir Ahora</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Catálogo de Productos -->
     <section id="catalogo" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12">
