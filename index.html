@@ -821,191 +821,200 @@ function setCustomOption(type, value, price = null) {
     drawCandle();
 }
 
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            if (!product) return;
+// Maneja el cambio de molde desde el desplegable (<select>)
+function onShapeSelectChange(selectEl) {
+    const selectedOption = selectEl.options[selectEl.selectedIndex];
+    const shapeValue = selectEl.value;
+    const price = parseInt(selectedOption.getAttribute('data-price')) || 12000;
 
-            const existing = cart.find(item => item.id === productId && !item.isCustom);
+    // Actualiza la opción personalizada y redibuja en Canvas
+    setCustomOption('shape', shapeValue, price);
+}
 
-            if (existing) {
-                existing.qty++;
-            } else {
-                cart.push({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                    wholesalePrice: product.wholesalePrice,
-                    qty: 1,
-                    isCustom: false
-                });
-            }
-            updateCart();
-            toggleCart(true);
+function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+
+    const existing = cart.find(item => item.id === productId && !item.isCustom);
+
+    if (existing) {
+        existing.qty++;
+    } else {
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            wholesalePrice: product.wholesalePrice,
+            qty: 1,
+            isCustom: false
+        });
+    }
+    updateCart();
+    toggleCart(true);
+}
+
+function addCustomToCart() {
+    const shapeLabel = shapeNames[currentCustom.shape] || currentCustom.shape.toUpperCase();
+    const colorLabel = colorNames[(currentCustom.color || '#FFFFFF').toUpperCase()] || 'Blanco Natural';
+
+    cart.push({
+        id: Date.now(),
+        name: `Vela Personalizada (${shapeLabel.split('(')[0].trim()})`,
+        price: currentCustom.price || 12000,
+        wholesalePrice: currentCustom.price || 12000,
+        qty: 1,
+        isCustom: true,
+        details: `Color: ${colorLabel} | Aroma: ${currentCustom.aroma || 'Sin aroma'} | Label: ${currentCustom.label || 'Sin texto'}`
+    });
+    updateCart();
+    toggleCart(true);
+}
+
+function updateCart() {
+    const countEl = document.getElementById('cart-count');
+    const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+    if (countEl) countEl.innerText = totalQty;
+
+    const itemsContainer = document.getElementById('cart-items');
+    if (!itemsContainer) return;
+
+    if (cart.length === 0) {
+        itemsContainer.innerHTML = '<p class="text-center text-sm text-brand-500 py-8">Tu carrito está vacío</p>';
+        const subtotalEl = document.getElementById('cart-subtotal');
+        const totalEl = document.getElementById('cart-total');
+        if (subtotalEl) subtotalEl.innerText = '$0';
+        if (totalEl) totalEl.innerText = '$8.000';
+        return;
+    }
+
+    itemsContainer.innerHTML = cart.map((item, index) => {
+        const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
+        return `
+            <div class="flex items-center justify-between border-b border-brand-100 pb-3">
+                <div>
+                    <h4 class="text-sm font-semibold text-brand-900">${item.name}</h4>
+                    ${item.details ? `<p class="text-[11px] text-brand-600">${item.details}</p>` : ''}
+                    <span class="text-xs font-bold text-brand-700">$${effectivePrice.toLocaleString('es-CO')}</span>
+                    ${totalQty >= 12 ? '<span class="text-[9px] bg-green-100 text-green-800 px-1.5 py-0.5 rounded ml-1 font-bold">Precio Mayor</span>' : ''}
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="changeQty(${index}, -1)" class="w-6 h-6 rounded bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-xs">-</button>
+                    <span class="text-xs font-medium">${item.qty}</span>
+                    <button onclick="changeQty(${index}, 1)" class="w-6 h-6 rounded bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-xs">+</button>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    const subtotal = cart.reduce((sum, item) => {
+        const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
+        return sum + (effectivePrice * item.qty);
+    }, 0);
+
+    const shipping = subtotal > 0 ? 8000 : 0;
+    const subtotalEl = document.getElementById('cart-subtotal');
+    const totalEl = document.getElementById('cart-total');
+
+    if (subtotalEl) subtotalEl.innerText = `$${subtotal.toLocaleString('es-CO')}`;
+    if (totalEl) totalEl.innerText = `$${(subtotal + shipping).toLocaleString('es-CO')}`;
+}
+
+function changeQty(index, delta) {
+    cart[index].qty += delta;
+    if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+    }
+    updateCart();
+}
+
+function toggleCart(forceOpen = false) {
+    const drawer = document.getElementById('cart-drawer');
+    const content = document.getElementById('drawer-content');
+    if (!drawer || !content) return;
+
+    if (forceOpen || drawer.classList.contains('opacity-0')) {
+        drawer.classList.remove('opacity-0', 'pointer-events-none');
+        content.classList.remove('translate-x-full');
+    } else {
+        drawer.classList.add('opacity-0', 'pointer-events-none');
+        content.classList.add('translate-x-full');
+    }
+}
+
+function selectPaymentMethod(method) {
+    selectedPaymentMethod = method;
+    const nequiBtn = document.getElementById('payMethodNequiBtn');
+    const codBtn = document.getElementById('payMethodCODBtn');
+
+    if (method === 'nequi') {
+        if (nequiBtn) nequiBtn.className = "p-2.5 border-2 border-brand-700 bg-brand-100 rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold text-brand-900 transition-all";
+        if (codBtn) codBtn.className = "p-2.5 border-2 border-brand-200 bg-white rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold text-brand-700 transition-all";
+    } else {
+        if (codBtn) codBtn.className = "p-2.5 border-2 border-brand-700 bg-brand-100 rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold text-brand-900 transition-all";
+        if (nequiBtn) nequiBtn.className = "p-2.5 border-2 border-brand-200 bg-white rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold text-brand-700 transition-all";
+    }
+}
+
+function processOrderTicket() {
+    if (cart.length === 0) {
+        alert("Tu carrito está vacío. Agrega un producto primero.");
+        return;
+    }
+
+    const modal = document.getElementById('nequi-modal');
+    const orderNumEl = document.getElementById('ticket-order-num');
+    const summaryDetails = document.getElementById('ticket-summary-details');
+    const nequiQrContainer = document.getElementById('nequi-qr-container');
+    const codContainer = document.getElementById('cod-container');
+
+    const orderNum = 'CA-' + Math.floor(1000 + Math.random() * 9000);
+    if (orderNumEl) orderNumEl.innerText = `Orden #${orderNum}`;
+
+    if (selectedPaymentMethod === 'nequi') {
+        if (nequiQrContainer) nequiQrContainer.classList.remove('hidden');
+        if (codContainer) codContainer.classList.add('hidden');
+    } else {
+        if (nequiQrContainer) nequiQrContainer.classList.add('hidden');
+        if (codContainer) codContainer.classList.remove('hidden');
+    }
+
+    const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+    const subtotal = cart.reduce((sum, item) => {
+        const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
+        return sum + (effectivePrice * item.qty);
+    }, 0);
+
+    if (summaryDetails) {
+        let html = '<p class="font-bold border-b border-stone-200 pb-1 mb-1">DETALLE DEL PEDIDO:</p>';
+        cart.forEach(item => {
+            const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
+            html += `<p>• ${item.qty}x ${item.name} - $${(effectivePrice * item.qty).toLocaleString('es-CO')}</p>`;
+        });
+        html += `<div class="border-t border-stone-300 mt-2 pt-1 font-bold">`;
+        html += `<p>Subtotal: $${subtotal.toLocaleString('es-CO')}</p>`;
+        html += `<p>Envío: $8.000</p>`;
+        html += `<p class="text-amber-900 font-extrabold text-sm">TOTAL: $${(subtotal + 8000).toLocaleString('es-CO')}</p>`;
+        html += `</div>`;
+        summaryDetails.innerHTML = html;
+    }
+
+    if (modal) {
+        modal.classList.remove('hidden');
+        history.pushState({ modalOpen: 'ticket' }, '');
+    }
+    if (window.lucide) lucide.createIcons();
+}
+
+// Cerrar modal Nequi / Ticket con soporte de historial
+function closeNequiModal(fromButton = true) {
+    const modal = document.getElementById('nequi-modal');
+    if (modal && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+        if (fromButton && history.state && history.state.modalOpen === 'ticket') {
+            history.back();
         }
-
-        function addCustomToCart() {
-            const shapeLabel = shapeNames[currentCustom.shape] || currentCustom.shape.toUpperCase();
-            const colorLabel = colorNames[(currentCustom.color || '#FFFFFF').toUpperCase()] || 'Blanco Natural';
-
-            cart.push({
-                id: Date.now(),
-                name: `Vela Personalizada (${shapeLabel.split('(')[0].trim()})`,
-                price: currentCustom.price || 12000,
-                wholesalePrice: currentCustom.price || 12000,
-                qty: 1,
-                isCustom: true,
-                details: `Color: ${colorLabel} | Aroma: ${currentCustom.aroma || 'Sin aroma'} | Label: ${currentCustom.label || 'Sin texto'}`
-            });
-            updateCart();
-            toggleCart(true);
-        }
-
-        function updateCart() {
-            const countEl = document.getElementById('cart-count');
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            if (countEl) countEl.innerText = totalQty;
-
-            const itemsContainer = document.getElementById('cart-items');
-            if (!itemsContainer) return;
-
-            if (cart.length === 0) {
-                itemsContainer.innerHTML = '<p class="text-center text-sm text-brand-500 py-8">Tu carrito está vacío</p>';
-                const subtotalEl = document.getElementById('cart-subtotal');
-                const totalEl = document.getElementById('cart-total');
-                if (subtotalEl) subtotalEl.innerText = '$0';
-                if (totalEl) totalEl.innerText = '$8.000';
-                return;
-            }
-
-            itemsContainer.innerHTML = cart.map((item, index) => {
-                const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
-                return `
-                    <div class="flex items-center justify-between border-b border-brand-100 pb-3">
-                        <div>
-                            <h4 class="text-sm font-semibold text-brand-900">${item.name}</h4>
-                            ${item.details ? `<p class="text-[11px] text-brand-600">${item.details}</p>` : ''}
-                            <span class="text-xs font-bold text-brand-700">$${effectivePrice.toLocaleString('es-CO')}</span>
-                            ${totalQty >= 12 ? '<span class="text-[9px] bg-green-100 text-green-800 px-1.5 py-0.5 rounded ml-1 font-bold">Precio Mayor</span>' : ''}
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <button onclick="changeQty(${index}, -1)" class="w-6 h-6 rounded bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-xs">-</button>
-                            <span class="text-xs font-medium">${item.qty}</span>
-                            <button onclick="changeQty(${index}, 1)" class="w-6 h-6 rounded bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-xs">+</button>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-
-            const subtotal = cart.reduce((sum, item) => {
-                const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
-                return sum + (effectivePrice * item.qty);
-            }, 0);
-
-            const shipping = subtotal > 0 ? 8000 : 0;
-            const subtotalEl = document.getElementById('cart-subtotal');
-            const totalEl = document.getElementById('cart-total');
-
-            if (subtotalEl) subtotalEl.innerText = `$${subtotal.toLocaleString('es-CO')}`;
-            if (totalEl) totalEl.innerText = `$${(subtotal + shipping).toLocaleString('es-CO')}`;
-        }
-
-        function changeQty(index, delta) {
-            cart[index].qty += delta;
-            if (cart[index].qty <= 0) {
-                cart.splice(index, 1);
-            }
-            updateCart();
-        }
-
-        function toggleCart(forceOpen = false) {
-            const drawer = document.getElementById('cart-drawer');
-            const content = document.getElementById('drawer-content');
-            if (!drawer || !content) return;
-
-            if (forceOpen || drawer.classList.contains('opacity-0')) {
-                drawer.classList.remove('opacity-0', 'pointer-events-none');
-                content.classList.remove('translate-x-full');
-            } else {
-                drawer.classList.add('opacity-0', 'pointer-events-none');
-                content.classList.add('translate-x-full');
-            }
-        }
-
-        function selectPaymentMethod(method) {
-            selectedPaymentMethod = method;
-            const nequiBtn = document.getElementById('payMethodNequiBtn');
-            const codBtn = document.getElementById('payMethodCODBtn');
-
-            if (method === 'nequi') {
-                if (nequiBtn) nequiBtn.className = "p-2.5 border-2 border-brand-700 bg-brand-100 rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold text-brand-900 transition-all";
-                if (codBtn) codBtn.className = "p-2.5 border-2 border-brand-200 bg-white rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold text-brand-700 transition-all";
-            } else {
-                if (codBtn) codBtn.className = "p-2.5 border-2 border-brand-700 bg-brand-100 rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold text-brand-900 transition-all";
-                if (nequiBtn) nequiBtn.className = "p-2.5 border-2 border-brand-200 bg-white rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold text-brand-700 transition-all";
-            }
-        }
-
-        function processOrderTicket() {
-            if (cart.length === 0) {
-                alert("Tu carrito está vacío. Agrega un producto primero.");
-                return;
-            }
-
-            const modal = document.getElementById('nequi-modal');
-            const orderNumEl = document.getElementById('ticket-order-num');
-            const summaryDetails = document.getElementById('ticket-summary-details');
-            const nequiQrContainer = document.getElementById('nequi-qr-container');
-            const codContainer = document.getElementById('cod-container');
-
-            const orderNum = 'CA-' + Math.floor(1000 + Math.random() * 9000);
-            if (orderNumEl) orderNumEl.innerText = `Orden #${orderNum}`;
-
-            if (selectedPaymentMethod === 'nequi') {
-                if (nequiQrContainer) nequiQrContainer.classList.remove('hidden');
-                if (codContainer) codContainer.classList.add('hidden');
-            } else {
-                if (nequiQrContainer) nequiQrContainer.classList.add('hidden');
-                if (codContainer) codContainer.classList.remove('hidden');
-            }
-
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            const subtotal = cart.reduce((sum, item) => {
-                const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
-                return sum + (effectivePrice * item.qty);
-            }, 0);
-
-            if (summaryDetails) {
-                let html = '<p class="font-bold border-b border-stone-200 pb-1 mb-1">DETALLE DEL PEDIDO:</p>';
-                cart.forEach(item => {
-                    const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
-                    html += `<p>• ${item.qty}x ${item.name} - $${(effectivePrice * item.qty).toLocaleString('es-CO')}</p>`;
-                });
-                html += `<div class="border-t border-stone-300 mt-2 pt-1 font-bold">`;
-                html += `<p>Subtotal: $${subtotal.toLocaleString('es-CO')}</p>`;
-                html += `<p>Envío: $8.000</p>`;
-                html += `<p class="text-amber-900 font-extrabold text-sm">TOTAL: $${(subtotal + 8000).toLocaleString('es-CO')}</p>`;
-                html += `</div>`;
-                summaryDetails.innerHTML = html;
-            }
-
-            if (modal) {
-                modal.classList.remove('hidden');
-                // Registrar la apertura en el historial para capturar el botón "Atrás" del celular
-                history.pushState({ modalOpen: 'ticket' }, '');
-            }
-            if (window.lucide) lucide.createIcons();
-        }
-
-        // Cerrar modal Nequi / Ticket con soporte de historial
-        function closeNequiModal(fromButton = true) {
-            const modal = document.getElementById('nequi-modal');
-            if (modal && !modal.classList.contains('hidden')) {
-                modal.classList.add('hidden');
-                if (fromButton && history.state && history.state.modalOpen === 'ticket') {
-                    history.back();
-                }
-            }
-        }
+    }
+}
 
         function sendOrderWhatsApp() {
             if (cart.length === 0) {
