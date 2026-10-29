@@ -485,9 +485,15 @@
                     <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-700"></i>
                     <h3 class="font-serif text-xl font-bold text-brand-900">Tu Pedido</h3>
                 </div>
-                <button onclick="toggleCart()" class="text-brand-500 hover:text-brand-800 p-1">
-                    <i data-lucide="x" class="w-6 h-6"></i>
-                </button>
+                <div class="flex items-center gap-2">
+                    <button onclick="clearCart()" class="text-rose-600 hover:text-rose-800 p-1.5 rounded-lg hover:bg-rose-50 transition-colors flex items-center gap-1 text-xs font-bold" title="Vaciar Carrito">
+                        <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        <span>Vaciar</span>
+                    </button>
+                    <button onclick="toggleCart()" class="text-brand-500 hover:text-brand-800 p-1">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
             </div>
 
             <div id="cart-items" class="p-6 space-y-4 flex-1 overflow-y-auto">
@@ -1058,6 +1064,17 @@
             toggleCart(true);
         }
 
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function clearCart() {
+            if (cart.length === 0) return;
+            cart = [];
+            updateCart();
+        }
+
         function updateCart() {
             const countEl = document.getElementById('cart-count');
             const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
@@ -1079,16 +1096,21 @@
                 const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
                 return `
                     <div class="flex items-center justify-between border-b border-brand-100 pb-3">
-                        <div>
+                        <div class="pr-2">
                             <h4 class="text-sm font-semibold text-brand-900">${item.name}</h4>
                             ${item.details ? `<p class="text-[11px] text-brand-600">${item.details}</p>` : ''}
                             <span class="text-xs font-bold text-brand-700">$${effectivePrice.toLocaleString('es-CO')}</span>
                             ${totalQty >= 12 ? '<span class="text-[9px] bg-green-100 text-green-800 px-1.5 py-0.5 rounded ml-1 font-bold">Precio Mayor</span>' : ''}
                         </div>
                         <div class="flex items-center gap-2">
-                            <button onclick="changeQty(${index}, -1)" class="w-6 h-6 rounded bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-xs">-</button>
-                            <span class="text-xs font-medium">${item.qty}</span>
-                            <button onclick="changeQty(${index}, 1)" class="w-6 h-6 rounded bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-xs">+</button>
+                            <div class="flex items-center gap-1.5 bg-brand-50 p-1 rounded-xl border border-brand-100">
+                                <button onclick="changeQty(${index}, -1)" class="w-6 h-6 rounded-lg bg-white text-brand-800 flex items-center justify-center font-bold text-xs shadow-sm hover:bg-brand-100">-</button>
+                                <span class="text-xs font-bold px-1 text-brand-900">${item.qty}</span>
+                                <button onclick="changeQty(${index}, 1)" class="w-6 h-6 rounded-lg bg-white text-brand-800 flex items-center justify-center font-bold text-xs shadow-sm hover:bg-brand-100">+</button>
+                            </div>
+                            <button onclick="removeFromCart(${index})" class="p-1.5 text-stone-400 hover:text-rose-600 transition-colors rounded-lg hover:bg-rose-50" title="Eliminar producto">
+                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                            </button>
                         </div>
                     </div>
                 `;
@@ -1105,6 +1127,8 @@
 
             if (subtotalEl) subtotalEl.innerText = `$${subtotal.toLocaleString('es-CO')}`;
             if (totalEl) totalEl.innerText = `$${(subtotal + shipping).toLocaleString('es-CO')}`;
+
+            if (window.lucide) lucide.createIcons();
         }
 
         function changeQty(index, delta) {
