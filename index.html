@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cera del Alma | Velas Artesanales en Bogotá</title>
-    <meta name="google-site-verification" content="vWQR_jv3LgnE1JNhIjm1mw8svmxPeKrE7eeZ004Se9U" />
     <!-- Metadatos para vista previa en WhatsApp y Redes Sociales (Open Graph) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cera del Alma | Velas Artesanales en Bogotá">
@@ -105,7 +104,7 @@
 </head>
 <body class="bg-cream font-sans text-brand-900 antialiased selection:bg-brand-200 custom-scrollbar relative">
 
-    <!-- ANUNCIO FLOTANTE DE BIENVENIDA / TEMPORADA NAVIDEÑA -->
+    <!-- ANUNCIO FLOTANTE DE BIENVENIDA / TEMPORADA NAVIDEÑA Y 7 DE VELITAS -->
     <div id="welcome-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md transition-opacity duration-500">
         <div class="relative bg-gradient-to-br from-stone-900 via-stone-950 to-red-950 text-white rounded-3xl p-6 sm:p-8 max-w-md w-full border-2 border-amber-400/60 shadow-2xl gold-border-glow text-center space-y-5 overflow-hidden">
             <!-- Destellos decorativos en fondo del modal -->
@@ -124,25 +123,25 @@
 
             <div class="space-y-2">
                 <h3 class="font-serif text-2xl sm:text-3xl font-extrabold gold-glow-text bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-400 bg-clip-text text-transparent">
-                    Especial Temporada Navideña 🎄✨
+                    Navidad & Noche de las Velitas 🕯️✨
                 </h3>
                 <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
-                    Ilumina tus momentos más especiales con nuestras velas artesanales hechas a mano en Bogotá. ¡Ya tenemos abierta la preventa para la colección navideña y pedidos al por mayor!
+                    Ilumina tus tradiciones con nuestras velas artesanales hechas a mano en Bogotá. ¡Ya abrimos preventa para la Colección del 7 de Diciembre y Navidad al por mayor!
                 </p>
             </div>
 
             <div class="w-full h-44 rounded-2xl overflow-hidden border border-amber-400/30 bg-stone-900 relative flex items-center justify-center">
-                <img src="img/vela14.jpg.jpeg" alt="Vela Navideña Cera del Alma" class="w-full h-full object-cover">
+                <img src="img/vela22.jpg.jpeg" alt="Vela Especial 7 de Velitas" class="w-full h-full object-cover" onerror="this.src='img/vela14.jpg.jpeg'">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end justify-center pb-2">
                     <span class="text-[11px] font-bold text-amber-200 flex items-center gap-1">
-                        🎁 Papá Noel & Diseños Navideños
+                        ✨ Edición 7 de Diciembre & Navidad
                     </span>
                 </div>
             </div>
 
             <div class="pt-1 flex flex-col gap-2">
                 <a href="#navidad" onclick="closeWelcomeModal()" class="w-full bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-stone-950 font-black py-3 rounded-xl shadow-lg transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2">
-                    <i data-lucide="sparkles" class="w-4 h-4 text-stone-950"></i> Ver Colección Navideña
+                    <i data-lucide="flame" class="w-4 h-4 text-stone-950"></i> Ver Colección 7 de Velitas
                 </a>
                 <button onclick="closeWelcomeModal()" class="text-xs text-stone-400 hover:text-amber-200 transition-colors pt-1 underline font-medium">
                     Explorar la tienda
@@ -178,6 +177,7 @@
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-brand-800">
                 <a href="#catalogo" class="hover:text-brand-600 transition-colors flex items-center gap-1">Catálogo</a>
                 <a href="#estudio-creativo" class="hover:text-brand-600 transition-colors">Personalizador</a>
+                <a href="#navidad" class="hover:text-brand-600 transition-colors flex items-center gap-1 text-amber-700 font-bold"><i data-lucide="flame" class="w-4 h-4 text-amber-600 animate-pulse"></i> 7 de Velitas</a>
                 <a href="#mayoreo" class="hover:text-brand-600 transition-colors">Precios por Mayor</a>
                 <a href="https://wa.me/573214291422?text=Hola%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20las%20velas%20de%20Cera%20del%20Alma" target="_blank" class="hover:text-brand-600 transition-colors">Contacto</a>
             </nav>
@@ -433,27 +433,29 @@
                             <span>1. Elige el Producto / Molde del Catálogo</span>
                         </label>
                         <select id="custom-shape-select" onchange="onShapeSelectChange(this)" class="w-full p-3 bg-white border border-brand-200 rounded-xl text-stone-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-sm cursor-pointer">
-                            <option value="golden" data-price="12000">🐶 Perro Golden — $12.000</option>
-                            <option value="bulldog" data-price="10000">🐶 Bulldog Francés — $10.000</option>
-                            <option value="poodle" data-price="10000">🐶 Perro Poodle — $10.000</option>
-                            <option value="shiba" data-price="8000">🐶 Shiba Inu — $8.000</option>
-                            <option value="pug" data-price="8000">🐶 Perro Pug — $8.000</option>
-                            <option value="angel" data-price="12000">✨ Ángel Querubín — $12.000</option>
-                            <option value="shihtzu" data-price="12000">🐶 Shih Tzu Rosada — $12.000</option>
-                            <option value="bebe" data-price="12000">🌙 Bebé Durmiendo — $12.000</option>
-                            <option value="frasco" data-price="15000">📦 Frasco Recordatorio — $15.000</option>
-                            <option value="cocker" data-price="10000">🐶 Perro Cocker — $10.000</option>
-                            <option value="gatomistico" data-price="12000">✨ Gatito Místico — $12.000</option>
-                            <option value="angelcilindro" data-price="22000">✨ Combo Ángel — $22.000</option>
-                            <option value="conejita" data-price="7500">🐰 Conejita Corazón — $7.500</option>
-                            <option value="papanoel" data-price="15000">🎁 Papá Noel — $15.000</option>
-                            <option value="ramorosas" data-price="55000">💐 Ramo de Rosas — $55.000</option>
-                            <option value="corazon" data-price="10000">❤️ Corazón — $10.000</option>
-                            <option value="suculentas" data-price="20000">🪴 Jardín Suculentas — $20.000</option>
-                            <option value="fantasmita" data-price="15000">👻 Fantasmita — $15.000</option>
-                            <option value="angelcelestial" data-price="18000">✨ Vela Recuerdo Ángel Celestial — $18.000</option>
-                            <option value="ramotulipanes" data-price="15000">🌷 Vela Ramo de Tulipanes — $15.000</option>
-                            <option value="angeldurmiente" data-price="18000">👼 Vela Ángel Durmiente — $18.000</option>
+                            <option value="golden" data-price="12000" data-wholesale="9500">🐶 Perro Golden — $12.000</option>
+                            <option value="bulldog" data-price="10000" data-wholesale="8000">🐶 Bulldog Francés — $10.000</option>
+                            <option value="poodle" data-price="10000" data-wholesale="8000">🐶 Perro Poodle — $10.000</option>
+                            <option value="shiba" data-price="8000" data-wholesale="6500">🐶 Shiba Inu — $8.000</option>
+                            <option value="pug" data-price="8000" data-wholesale="6500">🐶 Perro Pug — $8.000</option>
+                            <option value="angel" data-price="12000" data-wholesale="9500">✨ Ángel Querubín — $12.000</option>
+                            <option value="shihtzu" data-price="12000" data-wholesale="9500">🐶 Shih Tzu Rosada — $12.000</option>
+                            <option value="bebe" data-price="12000" data-wholesale="9500">🌙 Bebé Durmiendo — $12.000</option>
+                            <option value="frasco" data-price="15000" data-wholesale="12000">📦 Frasco Recordatorio — $15.000</option>
+                            <option value="cocker" data-price="10000" data-wholesale="8000">🐶 Perrito Cocker — $10.000</option>
+                            <option value="gatomistico" data-price="12000" data-wholesale="9500">✨ Gatito Místico — $12.000</option>
+                            <option value="angelcilindro" data-price="22000" data-wholesale="17500">✨ Combo Ángel — $22.000</option>
+                            <option value="conejita" data-price="7500" data-wholesale="6000">🐰 Conejita Corazón — $7.500</option>
+                            <option value="papanoel" data-price="15000" data-wholesale="12000">🎁 Papá Noel — $15.000</option>
+                            <option value="ramorosas" data-price="55000" data-wholesale="42000">💐 Ramo de Rosas — $55.000</option>
+                            <option value="corazon" data-price="10000" data-wholesale="8000">❤️ Corazón — $10.000</option>
+                            <option value="suculentas" data-price="20000" data-wholesale="16000">🪴 Jardín Suculentas — $20.000</option>
+                            <option value="fantasmita" data-price="15000" data-wholesale="12000">👻 Fantasmita — $15.000</option>
+                            <option value="angelcelestial" data-price="18000" data-wholesale="14500">✨ Vela Recuerdo Ángel Celestial — $18.000</option>
+                            <option value="ramotulipanes" data-price="15000" data-wholesale="12000">🌷 Vela Ramo de Tulipanes — $15.000</option>
+                            <option value="angeldurmiente" data-price="18000" data-wholesale="14500">👼 Vela Ángel Durmiente — $18.000</option>
+                            <option value="velitas7_1" data-price="16000" data-wholesale="13000">🕯️ Fanales Noche de Velitas — $16.000</option>
+                            <option value="velitas7_2" data-price="14000" data-wholesale="11000">🌟 Kit Velones 7 de Diciembre — $14.000</option>
                         </select>
                     </div>
 
@@ -639,7 +641,7 @@
         <i data-lucide="message-circle" class="w-7 h-7"></i>
     </a>
 
-    <!-- SECCIÓN INTERACTIVA: PRÓXIMAMENTE COLECCIÓN NAVIDEÑA -->
+    <!-- SECCIÓN INTERACTIVA: ESPECIAL 7 DE VELITAS Y NAVIDAD -->
     <section id="navidad" class="py-20 relative overflow-hidden bg-gradient-to-br from-red-950 via-stone-950 to-amber-950 text-white border-y-2 border-amber-500/50 gold-border-glow">
         <div class="absolute inset-0 pointer-events-none opacity-30 bg-[radial-gradient(#fef08a_1.5px,transparent_1.5px)] [background-size:28px_28px]"></div>
 
@@ -650,50 +652,116 @@
             <i data-lucide="star" class="w-6 h-6"></i>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
-            <div class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500/20 via-amber-400/30 to-amber-500/20 border border-amber-400/60 px-5 py-2 rounded-full text-xs font-bold text-amber-200 backdrop-blur-md shadow-lg">
-                <i data-lucide="sparkles" class="w-4 h-4 text-amber-300 animate-spin" style="animation-duration: 8s;"></i>
-                <span class="tracking-widest uppercase">Edición Oro Navidad 2026</span>
-                <i data-lucide="sparkles" class="w-4 h-4 text-amber-300 animate-spin" style="animation-duration: 8s;"></i>
-            </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+            
+            <div class="text-center space-y-4 max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500/20 via-amber-400/30 to-amber-500/20 border border-amber-400/60 px-5 py-2 rounded-full text-xs font-bold text-amber-200 backdrop-blur-md shadow-lg">
+                    <i data-lucide="flame" class="w-4 h-4 text-amber-300 animate-pulse"></i>
+                    <span class="tracking-widest uppercase">Edición Festiva 7 de Diciembre & Navidad</span>
+                    <i data-lucide="flame" class="w-4 h-4 text-amber-300 animate-pulse"></i>
+                </div>
 
-            <div class="max-w-3xl mx-auto space-y-4">
                 <h2 class="font-serif text-4xl sm:text-6xl font-black tracking-tight gold-glow-text bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-400 bg-clip-text text-transparent">
-                    Próximamente: Colección Navideña 🎅✨
+                    Especial 7 de Velitas & Navidad 🕯️✨
                 </h2>
                 <p class="text-amber-100/90 text-sm sm:text-base font-light leading-relaxed">
-                    Estamos horneando los aromas más cálidos de pino, canela y manzana silvestre. Diseños artesanales exclusivos con acabados dorados en forma de Papá Noel, árboles festivos y pesebres para iluminar tus novenas en Bogotá.
+                    Abre las puertas a la noche más mágica del año en Bogotá. Diseños artesanales con mecha de algodón, colores vibrantes y aromas a pino y canela para encender tus mejores deseos en familia.
                 </p>
             </div>
 
             <!-- Contador Regresivo Interactivo Estilo Oro -->
-            <div class="flex justify-center items-center gap-3 sm:gap-6 pt-2">
-                <div class="bg-black/40 backdrop-blur-md border border-amber-400/40 p-3 sm:p-4 rounded-2xl w-20 sm:w-24 shadow-2xl">
+            <div class="flex justify-center items-center gap-3 sm:gap-6">
+                <div class="bg-black/40 backdrop-blur-md border border-amber-400/40 p-3 sm:p-4 rounded-2xl w-20 sm:w-24 shadow-2xl text-center">
                     <span id="xmas-days" class="font-serif text-2xl sm:text-4xl font-extrabold text-amber-300 block">00</span>
                     <span class="text-[10px] sm:text-xs text-amber-200/80 font-semibold uppercase tracking-wider">Días</span>
                 </div>
                 <span class="text-2xl font-serif text-amber-400/80">:</span>
-                <div class="bg-black/40 backdrop-blur-md border border-amber-400/40 p-3 sm:p-4 rounded-2xl w-20 sm:w-24 shadow-2xl">
+                <div class="bg-black/40 backdrop-blur-md border border-amber-400/40 p-3 sm:p-4 rounded-2xl w-20 sm:w-24 shadow-2xl text-center">
                     <span id="xmas-hours" class="font-serif text-2xl sm:text-4xl font-extrabold text-amber-300 block">00</span>
                     <span class="text-[10px] sm:text-xs text-amber-200/80 font-semibold uppercase tracking-wider">Horas</span>
                 </div>
                 <span class="text-2xl font-serif text-amber-400/80">:</span>
-                <div class="bg-black/40 backdrop-blur-md border border-amber-400/40 p-3 sm:p-4 rounded-2xl w-20 sm:w-24 shadow-2xl">
+                <div class="bg-black/40 backdrop-blur-md border border-amber-400/40 p-3 sm:p-4 rounded-2xl w-20 sm:w-24 shadow-2xl text-center">
                     <span id="xmas-minutes" class="font-serif text-2xl sm:text-4xl font-extrabold text-amber-300 block">00</span>
                     <span class="text-[10px] sm:text-xs text-amber-200/80 font-semibold uppercase tracking-wider">Minut.</span>
                 </div>
                 <span class="text-2xl font-serif text-amber-400/80">:</span>
-                <div class="bg-black/40 backdrop-blur-md border border-amber-400/40 p-3 sm:p-4 rounded-2xl w-20 sm:w-24 shadow-2xl">
+                <div class="bg-black/40 backdrop-blur-md border border-amber-400/40 p-3 sm:p-4 rounded-2xl w-20 sm:w-24 shadow-2xl text-center">
                     <span id="xmas-seconds" class="font-serif text-2xl sm:text-4xl font-extrabold text-amber-300 block">00</span>
                     <span class="text-[10px] sm:text-xs text-amber-200/80 font-semibold uppercase tracking-wider">Seg.</span>
                 </div>
             </div>
 
+            <!-- FOTOGRAFÍAS / ÁLBUM DE LA COLECCIÓN 7 DE VELITAS (vela22 y vela23) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+                
+                <!-- Foto 1: Vela Especial Noche de Velitas 1 (vela22.jpg.jpeg) -->
+                <div class="bg-stone-900/90 rounded-3xl p-4 border border-amber-400/30 shadow-xl flex flex-col justify-between group hover:border-amber-400 transition-all duration-300">
+                    <div>
+                        <div class="aspect-square w-full rounded-2xl overflow-hidden bg-black mb-3 relative cursor-pointer" onclick="openImageModal('img/vela22.jpg.jpeg', 'Fanales Artesanales Noche de Velitas')">
+                            <img src="img/vela22.jpg.jpeg" alt="Fanales Artesanales Noche de Velitas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='img/vela14.jpg.jpeg'">
+                            <div class="absolute top-3 right-3 bg-amber-500 text-stone-950 text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow-md">
+                                🕯️ Especial 7 Diciembre
+                            </div>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-amber-100">Fanales Artesanales 7 de Velitas</h3>
+                        <p class="text-xs text-stone-300 mt-1">Diseño exclusivo en cera con acabado brillante. Iluminación cálida y resistente al viento para tus faroles.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-stone-800 flex items-center justify-between">
+                        <span class="text-amber-300 font-extrabold text-base">$16.000 COP</span>
+                        <button onclick="addToCart(22)" class="bg-gradient-to-r from-amber-400 to-amber-600 text-stone-950 font-bold px-3.5 py-2 rounded-xl text-xs flex items-center gap-1 shadow-md hover:scale-105 transition-all">
+                            <i data-lucide="plus" class="w-3.5 h-3.5"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Foto 2: Kit Velones de la Esperanza (vela23.jpg.jpeg) -->
+                <div class="bg-stone-900/90 rounded-3xl p-4 border border-amber-400/30 shadow-xl flex flex-col justify-between group hover:border-amber-400 transition-all duration-300">
+                    <div>
+                        <div class="aspect-square w-full rounded-2xl overflow-hidden bg-black mb-3 relative cursor-pointer" onclick="openImageModal('img/vela23.jpg.jpeg', 'Vela Edición Noche de los Deseos')">
+                            <img src="img/vela23.jpg.jpeg" alt="Vela Edición Noche de los Deseos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='img/vela6.jpg.jpeg'">
+                            <div class="absolute top-3 right-3 bg-amber-500 text-stone-950 text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow-md">
+                                ✨ Noche de Deseos
+                            </div>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-amber-100">Vela Noche de los Deseos</h3>
+                        <p class="text-xs text-stone-300 mt-1">Figura celestial de larga duración elaborada a mano con aroma relajante a vainilla y especias navideñas.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-stone-800 flex items-center justify-between">
+                        <span class="text-amber-300 font-extrabold text-base">$14.000 COP</span>
+                        <button onclick="addToCart(23)" class="bg-gradient-to-r from-amber-400 to-amber-600 text-stone-950 font-bold px-3.5 py-2 rounded-xl text-xs flex items-center gap-1 shadow-md hover:scale-105 transition-all">
+                            <i data-lucide="plus" class="w-3.5 h-3.5"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Foto 3: Vela Recuerdo Ángel Celestial (vela19.jpg.jpeg) -->
+                <div class="bg-stone-900/90 rounded-3xl p-4 border border-amber-400/30 shadow-xl flex flex-col justify-between group hover:border-amber-400 transition-all duration-300 sm:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="aspect-square w-full rounded-2xl overflow-hidden bg-black mb-3 relative cursor-pointer" onclick="openImageModal('img/vela19.jpg.jpeg', 'Vela Recuerdo Ángel Celestial')">
+                            <img src="img/vela19.jpg.jpeg" alt="Vela Recuerdo Ángel Celestial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow-md">
+                                🌟 Frasco Especial
+                            </div>
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-amber-100">Frasco Ángel Celestial</h3>
+                        <p class="text-xs text-stone-300 mt-1">Frasco protegido antiviento ideal para encender en el andén o terraza en la noche de velitas.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-stone-800 flex items-center justify-between">
+                        <span class="text-amber-300 font-extrabold text-base">$18.000 COP</span>
+                        <button onclick="addToCart(19)" class="bg-gradient-to-r from-amber-400 to-amber-600 text-stone-950 font-bold px-3.5 py-2 rounded-xl text-xs flex items-center gap-1 shadow-md hover:scale-105 transition-all">
+                            <i data-lucide="plus" class="w-3.5 h-3.5"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
             <!-- Botón interactivo -->
-            <div class="pt-4">
+            <div class="pt-2 text-center">
                 <button onclick="reserveXmasCollection()" class="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-stone-950 font-black px-8 py-4 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center gap-3 text-sm tracking-wide border border-yellow-200">
-                    <i data-lucide="sparkles" class="w-5 h-5 text-stone-950 animate-bounce"></i>
-                    Unirme a la Lista VIP / Apartar Catálogo Navideño
+                    <i data-lucide="flame" class="w-5 h-5 text-stone-950 animate-bounce"></i>
+                    Apartar Pedido para el 7 de Diciembre por WhatsApp
                 </button>
             </div>
         </div>
@@ -761,7 +829,7 @@
     <script>
         const PHONE_NUMBER = "573214291422";
 
-        // Base de Datos Completa de Productos (1 al 21)
+        // Base de Datos Completa de Productos (1 al 23)
         const products = [
             { id: 1, name: "Vela Perro Golden", price: 12000, wholesalePrice: 9500, image: "img/vela1.jpg.jpeg", category: "Mascotas" },
             { id: 2, name: "Vela Bulldog Francés", price: 10000, wholesalePrice: 8000, image: "img/vela2.jpg.jpeg", category: "Mascotas" },
@@ -783,7 +851,9 @@
             { id: 18, name: "Vela Fantasmita Amigable", price: 15000, wholesalePrice: 12000, image: "img/vela18.jpg.jpeg", category: "Temporada" },
             { id: 19, name: "Vela Recuerdo Ángel Celestial", price: 18000, wholesalePrice: 14500, image: "img/vela19.jpg.jpeg", category: "Novedad" },
             { id: 20, name: "Vela Ramo de Tulipanes", price: 15000, wholesalePrice: 12000, image: "img/vela20.jpg.jpeg", category: "Novedad" },
-            { id: 21, name: "Vela Ángel Durmiente", price: 18000, wholesalePrice: 14500, image: "img/vela21.jpg.jpeg", category: "Novedad" }
+            { id: 21, name: "Vela Ángel Durmiente", price: 18000, wholesalePrice: 14500, image: "img/vela21.jpg.jpeg", category: "Novedad" },
+            { id: 22, name: "Fanales Artesanales 7 de Velitas", price: 16000, wholesalePrice: 13000, image: "img/vela22.jpg.jpeg", category: "7 de Velitas", badge: "7 Velitas" },
+            { id: 23, name: "Vela Noche de los Deseos", price: 14000, wholesalePrice: 11000, image: "img/vela23.jpg.jpeg", category: "7 de Velitas", badge: "Edición Oro" }
         ];
 
         let cart = [];
@@ -794,7 +864,8 @@
             color: '#FDFBF7',
             aroma: 'Vainilla & Canela',
             label: '',
-            price: 12000
+            price: 12000,
+            wholesalePrice: 9500
         };
 
         const colorNames = {
@@ -830,7 +901,9 @@
             'fantasmita': 'Vela Fantasmita Amigable ($15.000)',
             'angelcelestial': 'Vela Recuerdo Ángel Celestial ($18.000)',
             'ramotulipanes': 'Vela Ramo de Tulipanes ($15.000)',
-            'angeldurmiente': 'Vela Ángel Durmiente ($18.000)'
+            'angeldurmiente': 'Vela Ángel Durmiente ($18.000)',
+            'velitas7_1': 'Fanales Artesanales 7 de Velitas ($16.000)',
+            'velitas7_2': 'Vela Noche de los Deseos ($14.000)'
         };
 
         function closeWelcomeModal() {
@@ -921,7 +994,9 @@
                 'fantasmita': 'img/vela18.jpg.jpeg',
                 'angelcelestial': 'img/vela19.jpg.jpeg',
                 'ramotulipanes': 'img/vela20.jpg.jpeg',
-                'angeldurmiente': 'img/vela21.jpg.jpeg'
+                'angeldurmiente': 'img/vela21.jpg.jpeg',
+                'velitas7_1': 'img/vela22.jpg.jpeg',
+                'velitas7_2': 'img/vela23.jpg.jpeg'
             };
             const imageSrc = imageMap[currentCustom.shape] || `img/vela1.jpg.jpeg`;
 
@@ -1040,10 +1115,11 @@
             }
         }
 
-        function setCustomOption(type, value, price = null) {
+        function setCustomOption(type, value, price = null, wholesalePrice = null) {
             currentCustom[type] = value;
             if (price) {
                 currentCustom.price = price;
+                currentCustom.wholesalePrice = wholesalePrice || price;
                 const priceEl = document.getElementById('custom-price');
                 if (priceEl) {
                     priceEl.innerText = `$${price.toLocaleString('es-CO')}`;
@@ -1078,8 +1154,9 @@
             const selectedOption = selectEl.options[selectEl.selectedIndex];
             const shapeValue = selectEl.value;
             const price = parseInt(selectedOption.getAttribute('data-price')) || 12000;
+            const wholesalePrice = parseInt(selectedOption.getAttribute('data-wholesale')) || price;
 
-            setCustomOption('shape', shapeValue, price);
+            setCustomOption('shape', shapeValue, price, wholesalePrice);
         }
 
         function addToCart(productId) {
@@ -1112,7 +1189,7 @@
                 id: Date.now(),
                 name: `Vela Personalizada (${shapeLabel.split('(')[0].trim()})`,
                 price: currentCustom.price || 12000,
-                wholesalePrice: currentCustom.price || 12000,
+                wholesalePrice: currentCustom.wholesalePrice || currentCustom.price || 9500,
                 qty: 1,
                 isCustom: true,
                 details: `Color: ${colorLabel} | Aroma: ${currentCustom.aroma || 'Sin aroma'} | Label: ${currentCustom.label || 'Sin texto'}`
@@ -1150,7 +1227,7 @@
             }
 
             itemsContainer.innerHTML = cart.map((item, index) => {
-                const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
+                const effectivePrice = (totalQty >= 12) ? item.wholesalePrice : item.price;
                 return `
                     <div class="flex items-center justify-between border-b border-brand-100 pb-3">
                         <div class="pr-2">
@@ -1174,7 +1251,7 @@
             }).join('');
 
             const subtotal = cart.reduce((sum, item) => {
-                const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
+                const effectivePrice = (totalQty >= 12) ? item.wholesalePrice : item.price;
                 return sum + (effectivePrice * item.qty);
             }, 0);
 
@@ -1249,14 +1326,14 @@
 
             const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
             const subtotal = cart.reduce((sum, item) => {
-                const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
+                const effectivePrice = (totalQty >= 12) ? item.wholesalePrice : item.price;
                 return sum + (effectivePrice * item.qty);
             }, 0);
 
             if (summaryDetails) {
                 let html = '<p class="font-bold border-b border-stone-200 pb-1 mb-1">DETALLE DEL PEDIDO:</p>';
                 cart.forEach(item => {
-                    const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
+                    const effectivePrice = (totalQty >= 12) ? item.wholesalePrice : item.price;
                     html += `<p>• ${item.qty}x ${item.name} - $${(effectivePrice * item.qty).toLocaleString('es-CO')}</p>`;
                 });
                 html += `<div class="border-t border-stone-300 mt-2 pt-1 font-bold">`;
@@ -1294,14 +1371,14 @@
             let msg = `Hola Cera del Alma! 🕯️ Quisiera realizar el siguiente pedido en Bogotá:\n\n`;
 
             cart.forEach(item => {
-                const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
+                const effectivePrice = (totalQty >= 12) ? item.wholesalePrice : item.price;
                 msg += `• ${item.qty}x ${item.name}`;
                 if (item.details) msg += ` (${item.details})`;
                 msg += ` - $${(effectivePrice * item.qty).toLocaleString('es-CO')}\n`;
             });
 
             const subtotal = cart.reduce((sum, item) => {
-                const effectivePrice = (totalQty >= 12 && !item.isCustom) ? item.wholesalePrice : item.price;
+                const effectivePrice = (totalQty >= 12) ? item.wholesalePrice : item.price;
                 return sum + (effectivePrice * item.qty);
             }, 0);
 
@@ -1387,7 +1464,7 @@
         }
 
         function reserveXmasCollection() {
-            const msg = "Hola Cera del Alma! 🎄✨ Me gustaría unirme a la Lista VIP para ser de los primeros en recibir el catálogo exclusivo de la Colección Navideña en Bogotá.";
+            const msg = "Hola Cera del Alma! 🕯️✨ Quisiera consultar y apartar mi pedido especial para la Noche de las Velitas (7 de Diciembre) en Bogotá.";
             window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
