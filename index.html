@@ -103,6 +103,9 @@
     </style>
 </head>
 <body class="bg-cream font-sans text-brand-900 antialiased selection:bg-brand-200 custom-scrollbar relative">
+    <audio id="bg-music" loop preload="auto">
+    <source src="audio/musica_relajante.mp3" type="audio/mpeg">
+</audio>
 
     <!-- ANUNCIO FLOTANTE DE BIENVENIDA / TEMPORADA NAVIDEÑA Y 7 DE VELITAS -->
     <div id="welcome-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md transition-opacity duration-500">
@@ -1454,6 +1457,13 @@
             updateCart();
             startXmasCountdown();
             if (window.lucide) lucide.createIcons();
+            document.addEventListener('click', function() {
+    const audio = document.getElementById('bg-music');
+    if (audio && audio.paused) {
+        audio.volume = 0.3; // Volumen al 30%
+        audio.play().catch(e => console.log("Audio a la espera de interacción"));
+    }
+}, { once: true });
         };
     </script>
 </body>
